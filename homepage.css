@@ -1,0 +1,394 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #1a3a52;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            background-color: #cbd5e1;
+            padding: 20px 30px;
+            font-weight: bold;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            stroke: #333;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .nav-links li {
+            margin-right: 80px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .user-icon {
+            background-color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a3a52;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .user-icon:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.1);
+        }
+
+        .user-icon-svg {
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        .hero-section {
+            position: relative;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            max-height: 760px;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.6) saturate(1.05);
+            transform-origin: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1300px;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.35));
+            padding: 30px 28px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            pointer-events: auto;
+        }
+
+        .hero-content h1 {
+            font-size: 36px;
+            line-height: 1.05;
+            margin: 0 0 12px;
+            letter-spacing: -0.5px;
+            text-transform: none;
+        }
+
+        .hero-sub {
+            margin: 0 0 18px;
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background: linear-gradient(90deg,#f59e0b,#fbbf24);
+            color: #09203f;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 8px 20px rgba(10,25,41,0.25);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(10,25,41,0.32);
+        }
+
+        @media (min-width: 900px) {
+            .hero-content h1 { font-size: 48px; }
+            .hero-sub { font-size: 18px; }
+        }
+
+        @media (max-width: 560px) {
+            .hero-content { padding: 20px; }
+            .hero-content h1 { font-size: 24px; }
+            .hero-image { height: 48vh; }
+        }
+
+        .featured-section {
+            padding: 60px 20px;
+            background-color: white;
+        }
+
+        .featured-section h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #1f2937;
+        }
+
+        .featured-grid {
+            display: flex;
+            max-width: 1500px;
+            margin: 0 auto;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .featured-card {
+            width: 280px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .featured-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .featured-info {
+            padding: 16px 12px;
+        }
+
+        .featured-info h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 0 0 8px;
+        }
+
+        .featured-info .price {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a3a52;
+            margin: 0 0 6px;
+        }
+
+        .featured-info .specs {
+            font-size: 15px;
+            color: #6b7280;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .bookings-section {
+            padding: 60px 20px;
+            background-color: white;
+        }
+
+        .bookings-section h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #1f2937;
+        }
+
+        .bookings-grid {
+            display: flex;
+            max-width: 1300px;
+            margin: 0 auto;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .booking-card {
+            position: relative;
+            width: 300px;
+            height: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            transition: all 0.28s ease;
+            cursor: pointer;
+        }
+
+        .booking-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(15,36,56,0.55), rgba(26,58,82,0.45));
+            z-index: 1;
+            transition: background 0.28s ease;
+        }
+
+        .booking-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+        }
+
+        .booking-card:hover::before {
+            background: linear-gradient(135deg, rgba(15,36,56,0.35), rgba(26,58,82,0.25));
+        }
+
+        .booking-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .booking-card h3 {
+            font-size: 22px;
+            color: #ffffff;
+            font-weight: 700;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transition: transform 0.28s ease;
+        }
+
+        .booking-card:hover h3 {
+            transform: scale(1.08);
+        }
+
+        @media (max-width: 768px) {
+            .booking-card {
+                width: 280px;
+                height: 260px;
+            }
+            .booking-card h3 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .bookings-grid {
+                gap: 20px;
+            }
+            .booking-card {
+                width: 100%;
+                max-width: 320px;
+                height: 240px;
+            }
+            .booking-card h3 {
+                font-size: 18px;
+            }
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #0f2438 0%, #1a3a52 50%, #12304a 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 4px solid rgba(255,255,255,0.04);
+            color: #ffffff;
+        }
+
+        .footer::before {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #fbbf24;
+            margin: 0 auto 24px;
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .footer-links li {
+            position: relative;
+        }
+
+        .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.25s ease, transform 0.25s ease;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .footer-links a:hover {
+            color: #fbbf24;
+            transform: translateY(-3px);
+            border-bottom-color: #fbbf24;
+        }
+
+        .footer::after {
+            content: '© 2025 DriveXPress. All rights reserved.';
+            display: block;
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 13px;
+        }
