@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ten Tiny Repairs: A Guide to Maintenance Costs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --nav-dark: #112a3d;
+            --accent: #f59e0b;
+            --orange: #f97316;
+            --muted: #6b7280;
+        }
+
+        body {
+            font-family: 'DM Sans', Arial, sans-serif;
+            background: linear-gradient(to right, #eef2f7, #f9fbfd);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .terms-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        /* META */
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .meta-badge {
+            background: var(--orange);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 20px;
+        }
+
+        .meta-dot {
+            width: 4px;
+            height: 4px;
+            background: #cbd5e1;
+            border-radius: 50%;
+        }
+
+        .meta-date { font-size: 13px; color: var(--muted); }
+
+        /* TITLE */
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 34px;
+            font-weight: 800;
+            color: #1f2933;
+            line-height: 1.25;
+            letter-spacing: 0.2px;
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .title-divider {
+            border: none;
+            border-top: 2px solid #eef2f7;
+            margin-bottom: 32px;
+        }
+
+        /* AUTHOR */
+        .author-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 36px;
+        }
+
+        .author-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #112a3d, #1a3a52);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .author-info .name { font-size: 14px; font-weight: 600; color: #112a3d; }
+        .author-info .role { font-size: 12px; color: var(--muted); }
+
+        .read-time {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 28px;
+            padding-left: 15px;
+            border-left: 4px solid #1a3a52;
+        }
+
+        section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a3a52;
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        section p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        /* COST SUMMARY CARDS */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-bottom: 32px;
+        }
+
+        .summary-card {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 18px 16px;
+            border-top: 3px solid var(--nav-dark);
+            text-align: center;
+        }
+
+        .summary-card .amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: #112a3d;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .summary-card .label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        /* REPAIR CARDS */
+        .repair-list {
+            list-style: none;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            counter-reset: repair-counter;
+        }
+
+        .repair-item {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 22px 24px;
+            border-left: 4px solid var(--orange);
+            transition: box-shadow 0.2s ease;
+            counter-increment: repair-counter;
+        }
+
+        .repair-item:hover {
+            box-shadow: 0 4px 16px rgba(17, 42, 61, 0.09);
+        }
+
+        .repair-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .repair-num {
+            background: var(--nav-dark);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .repair-title-block { flex: 1; }
+
+        .repair-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: #112a3d;
+            line-height: 1.3;
+        }
+
+        .repair-item > p {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.75;
+            margin-bottom: 14px;
+        }
+
+        /* COST ROW */
+        .cost-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .cost-pill {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cost-low    { background: #d1fae5; color: #065f46; }
+        .cost-medium { background: #fef3c7; color: #92400e; }
+        .cost-high   { background: #fee2e2; color: #991b1b; }
+
+        .diy-pill {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 20px;
+            background: #eff6ff;
+            color: #1d4ed8;
+        }
+
+        /* STAT ROW */
+        .repair-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat { display: flex; flex-direction: column; gap: 2px; }
+
+        .stat-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #9ca3af;
+        }
+
+        .stat-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: #112a3d;
+        }
+
+        /* SAVING TIP */
+        .saving-tip {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            background: #fff7ed;
+            border-left: 3px solid var(--orange);
+            border-radius: 0 8px 8px 0;
+            padding: 10px 14px;
+            margin-top: 12px;
+        }
+
+        .tip-icon {
+            font-size: 15px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .saving-tip p {
+            font-size: 13px !important;
+            color: #92400e !important;
+            line-height: 1.6 !important;
+            margin: 0 !important;
+        }
+
+        .saving-tip strong { color: #7c2d12; }
+
+        /* PULLQUOTE */
+        .pullquote {
+            background: linear-gradient(135deg, #112a3d, #1a3a52);
+            padding: 28px 32px;
+            border-radius: 10px;
+            margin: 32px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pullquote::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 100px;
+            line-height: 1;
+            color: rgba(249, 115, 22, 0.18);
+            position: absolute;
+            top: -8px;
+            left: 14px;
+        }
+
+        .pullquote p {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-style: italic;
+            line-height: 1.7;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
+
+        .pullquote cite {
+            display: block;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            color: #fdba74;
+            margin-top: 12px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+
+        /* COST TABLE */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        .spec-table th {
+            background: #112a3d;
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .spec-table th:first-child { border-radius: 6px 0 0 0; }
+        .spec-table th:last-child  { border-radius: 0 6px 0 0; }
+
+        .spec-table td {
+            padding: 10px 14px;
+            color: #374151;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .spec-table tr:last-child td { border-bottom: none; }
+        .spec-table tr:nth-child(even) td { background: #f8fafc; }
+
+        /* CHECKLIST */
+        .checklist {
+            list-style: none;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 15px;
+            color: #374151;
+            line-height: 1.7;
+        }
+
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .check-icon svg {
+            stroke: #fff;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        /* TAGS */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid #eef2f7;
+        }
+
+        .tag {
+            font-size: 12px;
+            font-weight: 500;
+            background: #eef2f7;
+            color: #112a3d;
+            padding: 5px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag:hover { background: #112a3d; color: #fff; }
+
+        @media (max-width: 600px) {
+            .terms-container { margin: 20px; padding: 25px; }
+            h1 { font-size: 24px; }
+            section h2 { font-size: 16px; }
+            .summary-grid { grid-template-columns: 1fr 1fr; }
+            .spec-table { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="terms-container">
+
+    <!-- META -->
+    <div class="article-meta">
+        <span class="meta-badge">Maintenance</span>
+        <span class="meta-dot"></span>
+        <span class="meta-date">Apr 2025</span>
+    </div>
+
+    <!-- TITLE -->
+    <h1>Ten Tiny Repairs: A Guide to Maintenance Costs</h1>
+    <p class="subtitle">Practical tips on the small repairs that add up — and how to minimize ownership costs over time.</p>
+
+    <hr class="title-divider">
+
+    <!-- AUTHOR -->
+    <div class="author-row">
+        <div class="author-avatar">ML</div>
+        <div class="author-info">
+            <div class="name">Marcus Lane</div>
+            <div class="role">Automotive Cost & Ownership Editor</div>
+        </div>
+        <div class="read-time">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            10 min read
+        </div>
+    </div>
+
+    <!-- COST SNAPSHOT -->
+    <div class="summary-grid">
+        <div class="summary-card">
+            <span class="amount">$1,200</span>
+            <span class="label">Avg. Annual Cost</span>
+        </div>
+        <div class="summary-card">
+            <span class="amount">68%</span>
+            <span class="label">DIY-Preventable</span>
+        </div>
+        <div class="summary-card">
+            <span class="amount">$480</span>
+            <span class="label">Avg. Annual Saving</span>
+        </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section>
+        <h2>Overview</h2>
+        <p>The sticker price of a car is just the beginning. Over a five-year ownership period, small repairs and routine maintenance typically add $5,000–$8,000 to the total cost — much of it entirely avoidable with the right habits. This guide breaks down ten of the most common maintenance items, what they realistically cost at a dealership versus an independent shop, which ones you can handle yourself, and the exact actions that will keep costs lowest over time.</p>
+    </section>
+
+    <!-- TEN REPAIRS -->
+    <section>
+        <h2>The Ten Repairs — Ranked by Cumulative Cost Impact</h2>
+        <ul class="repair-list">
+
+            <!-- 1 -->
+            <li class="repair-item">
+                <div class="repair-header">
+                    <div class="repair-num">1</div>
+                    <div class="repair-title-block">
+                        <h3>Brake Pad Replacement</h3>
+                    </div>
+                </div>
+                <p>Brake pads are the single most frequently replaced wear item on most vehicles, typically needing attention every 30,000–70,000 miles depending on driving style and vehicle weight. Neglecting worn pads leads to rotor damage — turning a $150 job into a $600+ repair almost instantly. Ceramic pads cost more upfront but outlast budget organic pads by 40–60%.</p>
+                <div class="cost-row">
+                    <span class="cost-pill cost-medium">⚠ Medium Cost</span>
+                    <span class="diy-pill">🔧 DIY Possible</span>
+                </div>
+                <div class="repair-stats">
+                    <div class="stat"><span class="stat-label">Dealer Price</span><span class="stat-value">$250–$400</span></div>
+                    <div class="stat"><span class="stat-label">Indie Shop</span><span class="stat-value">$120–$200</span></div>
+                    <div class="stat"><span class="stat-label">DIY Cost</span><span class="stat-value">$40–$80</span></div>
+                    <div class="stat"><span class="stat-label">Interval</span><span class="stat-value">30–70k mi</span></div>
+                </div>
+                <div class="saving-tip">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Saving tip:</strong> Listen for squealing at low speeds — that's the wear indicator. Address it immediately. Waiting until you hear grinding means rotor replacement is now unavoidable.</p>
+                </div>
+            </li>
+
+            <!-- 2 -->
+            <li class="repair-item">
+                <div class="repair-header">
+                    <div class="repair-num">2</div>
+                    <div class="repair-title-block">
+                        <h3>Tyre Rotation & Balancing</h3>
+                    </div>
+                </div>
+                <p>Skipping tyre rotations is one of the most expensive false economies in car ownership. Uneven wear reduces tyre life by up to 30%, turning a $1,200 set of tyres into a premature $1,200 replacement. Rotation every 6,000–8,000 miles — often bundled free with oil changes at independents — costs almost nothing against the saving it creates.</p>
+                <div class="cost-row">
+                    <span class="cost-pill cost-low">✓ Low Cost</span>
+                    <span class="diy-pill">🔧 DIY Possible</span>
+                </div>
+                <div class="repair-stats">
+                    <div class="stat"><span class="stat-label">Dealer Price</span><span class="stat-value">$50–$120</span></div>
+                    <div class="stat"><span class="stat-label">Indie Shop</span><span class="stat-value">$20–$50</span></div>
+                    <div class="stat"><span class="stat-label">DIY Cost</span><span class="stat-value">$0</span></div>
+                    <div class="stat"><span class="stat-label">Interval</span><span class="stat-value">6–8k mi</span></div>
+                </div>
+                <div class="saving-tip">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Saving tip:</strong> Many tyre shops include free rotation for the life of tyres purchased there. Factor this into your tyre buying decision — it adds genuine value over 4–5 years.</p>
+                </div>
+            </li>
+
+            <!-- 3 -->
+            <li class="repair-item">
+                <div class="repair-header">
+                    <div class="repair-num">3</div>
+                    <div class="repair-title-block">
+                        <h3>Air Filter Replacement (Engine & Cabin)</h3>
+                    </div>
+                </div>
+                <p>Both engine air filters and cabin air filters are among the most overpriced services at dealerships — routinely marked up 300–400% on parts alone. The parts cost $10–$25 each and replacement takes under ten minutes for most vehicles. A blocked engine air filter measurably reduces fuel efficiency; a blocked cabin filter recirculates dust and allergens through the interior.</p>
+                <div class="cost-row">
+                    <span class="cost-pill cost-low">✓ Low Cost</span>
+                    <span class="diy-pill">🔧 Easy DIY</span>
+                </div>
+                <div class="repair-stats">
+                    <div class="stat"><span class="stat-label">Dealer Price</span><span class="stat-value">$60–$100</span></div>
+                    <div class="stat"><span class="stat-label">Indie Shop</span><span class="stat-value">$30–$55</span></div>
+                    <div class="stat"><span class="stat-label">DIY Cost</span><span class="stat-value">$10–$25</span></div>
+                    <div class="stat"><span class="stat-label">Interval</span><span class="stat-value">12–15k mi</span></div>
+                </div>
+                <div class="saving-tip">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Saving tip:</strong> Buy both filters from an online parts retailer and replace them yourself. This is the single highest-ROI DIY maintenance task — saving $40–$80 each time in under 15 minutes.</p>
+                </div>
+            </li>
+
+            <!-- 4 -->
+            <li class="repair-item">
+                <div class="repair-header">
+                    <div class="repair-num">4</div>
+                    <div class="repair-title-block">
+                        <h3>Wiper Blade Replacement</h3>
+                    </div>
+                </div>
+                <p>Wiper blades degrade from UV exposure and temperature cycling regardless of use. Most drivers replace them too late — when streaking has already become a safety issue. Beam-style blades last significantly longer than conventional framed blades and perform better in heavy rain, making the slight premium worthwhile.</p>
+                <div class="cost-row">
+                    <span class="cost-pill cost-low">✓ Low Cost</span>
+                    <span class="diy-pill">🔧 Easy DIY</span>
+                </div>
+                <div class="repair-stats">
+                    <div class="stat"><span class="stat-label">Dealer Price</span><span class="stat-value">$40–$80</span></div>
+                    <div class="stat"><span class="stat-label">Indie Shop</span><span class="stat-value">$25–$45</span></div>
+                    <div class="stat"><span class="stat-label">DIY Cost</span><span class="stat-value">$15–$30</span></div>
+                    <div class="stat"><span class="stat-label">Interval</span><span class="stat-value">Annual</span></div>
+                </div>
+                <div class="saving-tip">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Saving tip:</strong> Replace both blades at the same time every autumn before winter rain arrives. Retailer fitting is usually free if you buy blades in-store.</p>
+                </div>
+            </li>
+
+            <!-- 5 -->
+            <li class="repair-item">
+                <div class="repair-header">
+                    <div class="repair-num">5</div>
+                    <div class="repair-title-block">
+                        <h3>Battery Testing & Replacement</h3>
+                    </div>
+                </div>
+                <p>A failing battery rarely announces itself clearly before leaving you stranded. Most batteries have a 3–5 year lifespan, and proactive testing from year three onwards costs nothing at most auto parts stores. Replacing on your schedule costs half of what a roadside callout and emergency replacement will. AGM batteries, required by many modern stop-start systems, must be matched exactly — fitting a conventional lead-acid will damage the alternator over time.</p>
+                <div class="cost-row">
+                    <span class="cost-pill cost-medium">⚠ Medium Cost</span>
+                    <span class="diy-pill">🔧 DIY Possible</span>
+                </div>
+                <div class="repair-stats">
+                    <div class="stat"><span class="stat-label">Dealer Price</span><span class="stat-value">$200–$380</span></div>
+                    <div class="stat"><span class="stat-label">Indie Shop</span><span class="stat-value">$120–$200</span></div>
+                    <div class="stat"><span class="stat-label">DIY Cost</span><span class="stat-value">$80–$150</span></div>
+                    <div class="stat"><span class="stat-label">Interval</span><span class="stat-value">3–5 years</span></div>
+                </div>
+                <div class="saving-tip">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Saving tip:</strong> Get a free battery test at any auto parts store from year three. If it shows below 70% charge capacity, replace it — don't wait for a cold morning to force the issue.</p>
+                </div>
+            </li>
+
+            <!-- 6 -->
+            <li class="repair-item">
+                <div class="repair-header">
+                    <div class="repair-num">6</div>
+                    <div class="repair-title-block">
+                        <h3>Spark Plug Replacement</h3>
+                    </div>
+                </div>
+                <p>Worn spark plugs cause misfires, reduce fuel economy by up to 30%, and increase emissions. Iridium or platinum plugs in most modern engines are designed to last 60,000–100,000 miles — but copper plugs in older vehicles need attention every 20,000–30,000 miles. This is a straightforward DIY job on most four-cylinder engines; V8s and transversely mounted engines can be more involved.</p>
+                <div class="cost-row">
+                    <span class="cost-pill cost-medium">⚠ Medium Cost</span>
+                    <span class="diy-pill">🔧 DIY Possible</span>
+                </div>
+                <div class="repair-stats">
+                    <div class="stat"><span class="stat-label">Dealer Price</span><span class="stat-value">$150–$300</span></div>
+                    <div class="stat"><span class="stat-label">Indie Shop</span><span class="stat-value">$80–$150</span></div>
+                    <div class="stat"><span class="stat-label">DIY Cost</span><span class="stat-value">$20–$60</span></div>
+                    <div class="stat"><span class="stat-label">Interval</span><span class="stat-value">30–100k mi</span></div>
+                </div>
+                <div class="saving-tip">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Saving tip:</strong> Always replace all plugs at once — mixing old and new plugs creates uneven combustion. Combine with a coil inspection while the engine is apart to avoid a repeat visit.</p>
+                </div>
+            </li>
+
+            <!-- 7 -->
+            <li class="repair-item">
+                <div class="repair-header">
+                    <div class="repair-num">7</div>
+                    <div class="repair-title-block">
+                        <h3>Coolant Flush</h3>
+                    </div>
+                </div>
+                <p>Coolant degrades over time, becoming acidic and corroding the radiator, water pump, and heater core from within. A coolant flush every 2–5 years (depending on fluid type) costs under $100 at an independent shop and prevents failures that cost $400–$1,500 to fix. It is one of the most consistently skipped maintenance items and one of the highest-impact preventive tasks.</p>
+                <div class="cost-row">
+                    <span class="cost-pill cost-low">✓ Low Cost</span>
+                    <span class="diy-pill">🔧 DIY Possible</span>
+                </div>
+                <div class="repair-stats">
+                    <div class="stat"><span class="stat-label">Dealer Price</span><span class="stat-value">$120–$180</span></div>
+                    <div class="stat"><span class="stat-label">Indie Shop</span><span class="stat-value">$60–$100</span></div>
+                    <div class="stat"><span class="stat-label">DIY Cost</span><span class="stat-value">$20–$40</span></div>
+                    <div class="stat"><span class="stat-label">Interval</span><span class="stat-value">2–5 years</span></div>
+                </div>
+                <div class="saving-tip">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Saving tip:</strong> Check your coolant colour when the engine is cold. Brown or rusty fluid means the flush is overdue. Clear or slightly tinted fluid means you have time.</p>
+                </div>
+            </li>
+
+            <!-- 8 -->
+            <li class="repair-item">
+                <div class="repair-header">
+                    <div class="repair-num">8</div>
+                    <div class="repair-title-block">
+                        <h3>Transmission Fluid Change</h3>
+                    </div>
+                </div>
+                <p>Transmission fluid is frequently described as a "lifetime fill" in owner's manuals — a claim most independent mechanics dispute. Degraded fluid increases heat, accelerates wear, and is a leading cause of premature automatic transmission failure. A $100–$200 fluid change every 40,000–60,000 miles is cheap insurance against a $2,500–$5,000 transmission rebuild.</p>
+                <div class="cost-row">
+                    <span class="cost-pill cost-medium">⚠ Medium Cost</span>
+                    <span class="cost-pill cost-high">⚡ High if ignored</span>
+                </div>
+                <div class="repair-stats">
+                    <div class="stat"><span class="stat-label">Dealer Price</span><span class="stat-value">$200–$350</span></div>
+                    <div class="stat"><span class="stat-label">Indie Shop</span><span class="stat-value">$100–$180</span></div>
+                    <div class="stat"><span class="stat-label">DIY Cost</span><span class="stat-value">$30–$70</span></div>
+                    <div class="stat"><span class="stat-label">Interval</span><span class="stat-value">40–60k mi</span></div>
+                </div>
+                <div class="saving-tip">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Saving tip:</strong> Disregard "lifetime fluid" advice for any vehicle over 50,000 miles. The cost of prevention is less than 5% of the cost of replacement.</p>
+                </div>
+            </li>
+
+            <!-- 9 -->
+            <li class="repair-item">
+                <div class="repair-header">
+                    <div class="repair-num">9</div>
+                    <div class="repair-title-block">
+                        <h3>Tyre Pressure Monitoring & Inflation</h3>
+                    </div>
+                </div>
+                <p>Chronically under-inflated tyres increase rolling resistance, reduce fuel economy by 0.5% per PSI below target, accelerate shoulder wear, and raise blowout risk. TPMS warning lights typically illuminate only when pressure drops 25% below target — at which point damage is already occurring. A quality tyre gauge costs $10 and monthly checks take under two minutes per vehicle.</p>
+                <div class="cost-row">
+                    <span class="cost-pill cost-low">✓ Near-Zero Cost</span>
+                    <span class="diy-pill">🔧 Easy DIY</span>
+                </div>
+                <div class="repair-stats">
+                    <div class="stat"><span class="stat-label">Equipment Cost</span><span class="stat-value">$10–$30</span></div>
+                    <div class="stat"><span class="stat-label">Annual Fuel Saving</span><span class="stat-value">$40–$100</span></div>
+                    <div class="stat"><span class="stat-label">Tyre Life Gain</span><span class="stat-value">+15–20%</span></div>
+                    <div class="stat"><span class="stat-label">Interval</span><span class="stat-value">Monthly</span></div>
+                </div>
+                <div class="saving-tip">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Saving tip:</strong> Check pressure when tyres are cold — before driving or at least 3 hours after parking. Hot tyres read 4–6 PSI higher and will give a false reading.</p>
+                </div>
+            </li>
+
+            <!-- 10 -->
+            <li class="repair-item">
+                <div class="repair-header">
+                    <div class="repair-num">10</div>
+                    <div class="repair-title-block">
+                        <h3>Light Bulb & Fuse Replacement</h3>
+                    </div>
+                </div>
+                <p>Failed bulbs are one of the easiest ways to accumulate unnecessary labour charges. A blown brake light or headlamp costs $5–$15 in parts but $60–$120 at a dealer once labour is added. Most exterior bulbs on pre-2015 vehicles are straightforward to replace with the owner's manual and a $10 bulb. LED-heavy modern vehicles are the exception — some require panel removal or firmware resets, where a shop is genuinely the right call.</p>
+                <div class="cost-row">
+                    <span class="cost-pill cost-low">✓ Low Cost</span>
+                    <span class="diy-pill">🔧 Easy DIY — most models</span>
+                </div>
+                <div class="repair-stats">
+                    <div class="stat"><span class="stat-label">Dealer Price</span><span class="stat-value">$60–$120</span></div>
+                    <div class="stat"><span class="stat-label">Indie Shop</span><span class="stat-value">$25–$60</span></div>
+                    <div class="stat"><span class="stat-label">DIY Cost</span><span class="stat-value">$5–$20</span></div>
+                    <div class="stat"><span class="stat-label">Interval</span><span class="stat-value">As needed</span></div>
+                </div>
+                <div class="saving-tip">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Saving tip:</strong> Do a full walkaround light check monthly — brake lights require a second person or a reflective surface. Keep a spare fuse kit in the glovebox; they weigh nothing and cost under $5.</p>
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <!-- PULLQUOTE -->
+    <div class="pullquote">
+        <p>The most expensive repair is always the one you could have prevented for a fraction of the cost. Maintenance isn't a cost — it's the cheapest insurance policy you'll ever buy for your vehicle.</p>
+        <cite>— Marcus Lane, Automotive Cost & Ownership Editor</cite>
+    </div>
+
+    <!-- COST SUMMARY TABLE -->
+    <section>
+        <h2>Full Cost Comparison at a Glance</h2>
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>Repair</th>
+                    <th>Dealer</th>
+                    <th>Indie Shop</th>
+                    <th>DIY</th>
+                    <th>Interval</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Brake Pads</strong></td>
+                    <td>$250–$400</td>
+                    <td>$120–$200</td>
+                    <td>$40–$80</td>
+                    <td>30–70k mi</td>
+                </tr>
+                <tr>
+                    <td><strong>Tyre Rotation</strong></td>
+                    <td>$50–$120</td>
+                    <td>$20–$50</td>
+                    <td>$0</td>
+                    <td>6–8k mi</td>
+                </tr>
+                <tr>
+                    <td><strong>Air Filters</strong></td>
+                    <td>$60–$100</td>
+                    <td>$30–$55</td>
+                    <td>$10–$25</td>
+                    <td>12–15k mi</td>
+                </tr>
+                <tr>
+                    <td><strong>Wiper Blades</strong></td>
+                    <td>$40–$80</td>
+                    <td>$25–$45</td>
+                    <td>$15–$30</td>
+                    <td>Annual</td>
+                </tr>
+                <tr>
+                    <td><strong>Battery</strong></td>
+                    <td>$200–$380</td>
+                    <td>$120–$200</td>
+                    <td>$80–$150</td>
+                    <td>3–5 years</td>
+                </tr>
+                <tr>
+                    <td><strong>Spark Plugs</strong></td>
+                    <td>$150–$300</td>
+                    <td>$80–$150</td>
+                    <td>$20–$60</td>
+                    <td>30–100k mi</td>
+                </tr>
+                <tr>
+                    <td><strong>Coolant Flush</strong></td>
+                    <td>$120–$180</td>
+                    <td>$60–$100</td>
+                    <td>$20–$40</td>
+                    <td>2–5 years</td>
+                </tr>
+                <tr>
+                    <td><strong>Transmission Fluid</strong></td>
+                    <td>$200–$350</td>
+                    <td>$100–$180</td>
+                    <td>$30–$70</td>
+                    <td>40–60k mi</td>
+                </tr>
+                <tr>
+                    <td><strong>Tyre Pressure</strong></td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>$10–$30</td>
+                    <td>Monthly</td>
+                </tr>
+                <tr>
+                    <td><strong>Bulbs & Fuses</strong></td>
+                    <td>$60–$120</td>
+                    <td>$25–$60</td>
+                    <td>$5–$20</td>
+                    <td>As needed</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- OWNERSHIP TIPS -->
+    <section>
+        <h2>How to Minimise Ownership Costs — 6 Golden Rules</h2>
+        <ul class="checklist">
+            <li>
+                <div class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span><strong>Follow the independent shop, not the dealer, for routine work.</strong> For most scheduled maintenance, an independent specialist charges 30–50% less and uses the same or equivalent parts. Reserve the dealer for warranty work and complex electronic diagnostics.</span>
+            </li>
+            <li>
+                <div class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span><strong>Batch maintenance visits wherever possible.</strong> Combining a tyre rotation with an oil change and a cabin filter swap into one visit saves you two separate labour minimums — typically $30–$60 each time.</span>
+            </li>
+            <li>
+                <div class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span><strong>Learn the three DIY tasks with the highest return.</strong> Air filters, wiper blades, and tyre pressure monitoring are the three tasks with the best time-to-saving ratio — collectively saving $100–$180 annually with under 30 minutes of effort.</span>
+            </li>
+            <li>
+                <div class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span><strong>Create a maintenance log and stick to intervals.</strong> A simple spreadsheet tracking mileage, date, and task completed removes guesswork and helps you catch approaching service intervals before they become emergencies.</span>
+            </li>
+            <li>
+                <div class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span><strong>Never skip a transmission or coolant flush to save money.</strong> These are the two items most likely to produce catastrophic failures if deferred. The cost ratio of prevention to repair is greater than 10:1 in both cases.</span>
+            </li>
+            <li>
+                <div class="check-icon">
+                    <svg width="10" height="10" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span><strong>Buy parts online, pay for labour only.</strong> For jobs you're not comfortable doing yourself, supply your own parts sourced from a reputable online retailer. Most independent shops will accept customer-supplied parts — saving 40–60% on the parts markup.</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- VERDICT -->
+    <section>
+        <h2>Our Verdict</h2>
+        <p>The ten repairs covered here account for the majority of routine maintenance spending across a typical ownership period. Most can be handled by any attentive owner with basic tools, and all of them are cheaper when addressed proactively rather than reactively. The single most impactful change any owner can make is shifting from reactive to scheduled maintenance — treating the service calendar as non-negotiable rather than optional.</p>
+    </section>
+
+    <!-- TAGS -->
+    <div class="tags">
+        <span class="tag">Maintenance</span>
+        <span class="tag">Ownership Costs</span>
+        <span class="tag">DIY Repairs</span>
+        <span class="tag">Brake Pads</span>
+        <span class="tag">Tyres</span>
+        <span class="tag">Battery</span>
+        <span class="tag">Buyer's Guide</span>
+        <span class="tag">Cost Saving</span>
+    </div>
+
+</div>
+
+</body>
+</html>

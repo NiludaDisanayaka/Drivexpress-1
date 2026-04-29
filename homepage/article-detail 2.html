@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Revolution: Latest EVs Changing the Market</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --nav-dark: #112a3d;
+            --accent: #f59e0b;
+            --muted: #6b7280;
+        }
+
+        body {
+            font-family: 'DM Sans', Arial, sans-serif;
+            background: linear-gradient(to right, #eef2f7, #f9fbfd);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .terms-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        /* META */
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .meta-badge {
+            background: #10b981;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .meta-dot {
+            width: 4px;
+            height: 4px;
+            background: #cbd5e1;
+            border-radius: 50%;
+        }
+
+        .meta-date { font-size: 13px; color: var(--muted); }
+
+        /* TITLE */
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 34px;
+            font-weight: 800;
+            color: #1f2933;
+            line-height: 1.25;
+            letter-spacing: 0.2px;
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .title-divider {
+            border: none;
+            border-top: 2px solid #eef2f7;
+            margin-bottom: 32px;
+        }
+
+        /* AUTHOR */
+        .author-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 36px;
+        }
+
+        .author-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #112a3d, #1a3a52);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .author-info .name { font-size: 14px; font-weight: 600; color: #112a3d; }
+        .author-info .role { font-size: 12px; color: var(--muted); }
+
+        .read-time {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 28px;
+            padding-left: 15px;
+            border-left: 4px solid #1a3a52;
+        }
+
+        section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a3a52;
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        section p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        /* EV CARDS */
+        .ev-list {
+            list-style: none;
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .ev-item {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 20px 22px;
+            border-left: 4px solid #10b981;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .ev-item:hover {
+            box-shadow: 0 4px 16px rgba(17,42,61,0.09);
+        }
+
+        .ev-item-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .rank-badge {
+            background: var(--nav-dark);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ev-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: #112a3d;
+        }
+
+        .ev-item p {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.75;
+        }
+
+        .ev-stats {
+            display: flex;
+            gap: 18px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .stat { display: flex; flex-direction: column; gap: 2px; }
+
+        .stat-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #9ca3af;
+        }
+
+        .stat-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: #112a3d;
+        }
+
+        .stars { color: var(--accent); font-size: 13px; letter-spacing: 1px; }
+
+        /* HIGHLIGHT BOXES */
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .highlight-box {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 20px;
+            border-top: 3px solid var(--nav-dark);
+        }
+
+        .highlight-box h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #112a3d;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box p {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .icon-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            flex-shrink: 0;
+        }
+
+        /* PULLQUOTE */
+        .pullquote {
+            background: linear-gradient(135deg, #112a3d, #1a3a52);
+            color: #fff;
+            padding: 28px 32px;
+            border-radius: 10px;
+            margin: 32px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pullquote::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 100px;
+            line-height: 1;
+            color: rgba(16,185,129,0.18);
+            position: absolute;
+            top: -8px;
+            left: 14px;
+        }
+
+        .pullquote p {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-style: italic;
+            line-height: 1.7;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
+
+        .pullquote cite {
+            display: block;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            color: #10b981;
+            margin-top: 12px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+
+        /* SPEC TABLE */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        .spec-table th {
+            background: #112a3d;
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .spec-table th:first-child { border-radius: 6px 0 0 0; }
+        .spec-table th:last-child  { border-radius: 0 6px 0 0; }
+
+        .spec-table td {
+            padding: 10px 14px;
+            color: #374151;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .spec-table tr:last-child td { border-bottom: none; }
+        .spec-table tr:nth-child(even) td { background: #f8fafc; }
+
+        /* BUYER TIPS */
+        .tips-list {
+            list-style: none;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .tip-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .tip-number {
+            background: #10b981;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            min-width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .tip-text {
+            font-size: 15px;
+            line-height: 1.75;
+            color: #374151;
+        }
+
+        .tip-text strong { color: #112a3d; }
+
+        /* TAGS */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid #eef2f7;
+        }
+
+        .tag {
+            font-size: 12px;
+            font-weight: 500;
+            background: #eef2f7;
+            color: #112a3d;
+            padding: 5px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag:hover { background: #112a3d; color: #fff; }
+
+        @media (max-width: 600px) {
+            .terms-container { margin: 20px; padding: 25px; }
+            h1 { font-size: 24px; }
+            section h2 { font-size: 16px; }
+            .highlight-grid { grid-template-columns: 1fr; }
+            .spec-table { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="terms-container">
+
+    <!-- META -->
+    <div class="article-meta">
+        <span class="meta-badge">Electric Vehicles</span>
+        <span class="meta-dot"></span>
+        <span class="meta-date">Mar 2025</span>
+    </div>
+
+    <!-- TITLE -->
+    <h1>Electric Revolution: Latest EVs Changing the Market</h1>
+    <p class="subtitle">From charging speed to battery management — what buyers should expect from the next-gen EVs.</p>
+
+    <hr class="title-divider">
+
+    <!-- AUTHOR -->
+    <div class="author-row">
+        <div class="author-avatar">SR</div>
+        <div class="author-info">
+            <div class="name">Sofia Reeves</div>
+            <div class="role">EV Technology Correspondent</div>
+        </div>
+        <div class="read-time">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            14 min read
+        </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section>
+        <h2>Overview</h2>
+        <p>The electric vehicle market has shifted dramatically over the past 18 months. Range anxiety is fading, charging networks are maturing, and battery chemistry breakthroughs are delivering genuine value at competitive price points. This review covers the six most significant new EVs arriving in 2025 — assessed across range, charge speed, software integration, and ownership cost.</p>
+    </section>
+
+    <!-- KEY THEMES -->
+    <section>
+        <h2>What's Changed in 2025</h2>
+        <div class="highlight-grid">
+            <div class="highlight-box">
+                <h4><span class="icon-dot"></span>Ultra-Fast Charging</h4>
+                <p>800V architectures are now mainstream, enabling 10–80% charges in under 18 minutes on compatible networks.</p>
+            </div>
+            <div class="highlight-box">
+                <h4><span class="icon-dot"></span>Solid-State Progress</h4>
+                <p>Semi-solid-state cells debut in two models this year, promising 20% more energy density with improved thermal safety.</p>
+            </div>
+            <div class="highlight-box">
+                <h4><span class="icon-dot"></span>Smarter Battery Management</h4>
+                <p>AI-driven BMS now predicts degradation cycles and optimises charge curves based on daily usage patterns.</p>
+            </div>
+            <div class="highlight-box">
+                <h4><span class="icon-dot"></span>Vehicle-to-Grid (V2G)</h4>
+                <p>Three of the six models reviewed support bidirectional charging, turning the car into a home energy buffer.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EV LIST -->
+    <section>
+        <h2>The Top 6 EVs of 2025</h2>
+        <ul class="ev-list">
+
+            <li class="ev-item">
+                <div class="ev-item-header">
+                    <div class="rank-badge">1</div>
+                    <h3>Hyundai IONIQ 9 AWD Long Range</h3>
+                </div>
+                <p>Sets a new benchmark for family EVs. The 110 kWh battery delivers a real-world range of 380 miles, and its 350 kW peak charging capability means a 20-minute top-up adds over 200 miles. The cabin rivals premium German rivals at a significantly lower price point.</p>
+                <div class="ev-stats">
+                    <div class="stat"><span class="stat-label">Rating</span><span class="stars">★★★★★</span></div>
+                    <div class="stat"><span class="stat-label">Range</span><span class="stat-value">380 mi</span></div>
+                    <div class="stat"><span class="stat-label">Charge (10–80%)</span><span class="stat-value">18 min</span></div>
+                    <div class="stat"><span class="stat-label">Score</span><span class="stat-value">5.0 / 5.0</span></div>
+                </div>
+            </li>
+
+            <li class="ev-item">
+                <div class="ev-item-header">
+                    <div class="rank-badge">2</div>
+                    <h3>Mercedes EQS 450+ Facelift</h3>
+                </div>
+                <p>The revised EQS doubles down on its Hyperscreen infotainment and introduces updated aerodynamics pushing the drag coefficient to 0.19 Cd. Range climbs to 410 miles and the regenerative braking system is now fully one-pedal in urban mode.</p>
+                <div class="ev-stats">
+                    <div class="stat"><span class="stat-label">Rating</span><span class="stars">★★★★★</span></div>
+                    <div class="stat"><span class="stat-label">Range</span><span class="stat-value">410 mi</span></div>
+                    <div class="stat"><span class="stat-label">Charge (10–80%)</span><span class="stat-value">22 min</span></div>
+                    <div class="stat"><span class="stat-label">Score</span><span class="stat-value">4.8 / 5.0</span></div>
+                </div>
+            </li>
+
+            <li class="ev-item">
+                <div class="ev-item-header">
+                    <div class="rank-badge">3</div>
+                    <h3>Kia EV9 GT Line</h3>
+                </div>
+                <p>Seven seats, V2G capability, and a 480 kW ultra-rapid charge option make the EV9 GT the most practical family hauler in this group. Rear-wheel steering at low speeds gives it surprising urban agility despite its large footprint.</p>
+                <div class="ev-stats">
+                    <div class="stat"><span class="stat-label">Rating</span><span class="stars">★★★★</span></div>
+                    <div class="stat"><span class="stat-label">Range</span><span class="stat-value">354 mi</span></div>
+                    <div class="stat"><span class="stat-label">Charge (10–80%)</span><span class="stat-value">24 min</span></div>
+                    <div class="stat"><span class="stat-label">Score</span><span class="stat-value">4.6 / 5.0</span></div>
+                </div>
+            </li>
+
+            <li class="ev-item">
+                <div class="ev-item-header">
+                    <div class="rank-badge">4</div>
+                    <h3>BMW iX2 xDrive30</h3>
+                </div>
+                <p>Compact, sharp to drive, and now equipped with BMW's fifth-generation eDrive system. The 75 kWh battery may be smaller than rivals, but intelligent pre-conditioning and an updated thermal management system ensure consistent performance in cold climates.</p>
+                <div class="ev-stats">
+                    <div class="stat"><span class="stat-label">Rating</span><span class="stars">★★★★</span></div>
+                    <div class="stat"><span class="stat-label">Range</span><span class="stat-value">298 mi</span></div>
+                    <div class="stat"><span class="stat-label">Charge (10–80%)</span><span class="stat-value">26 min</span></div>
+                    <div class="stat"><span class="stat-label">Score</span><span class="stat-value">4.4 / 5.0</span></div>
+                </div>
+            </li>
+
+            <li class="ev-item">
+                <div class="ev-item-header">
+                    <div class="rank-badge">5</div>
+                    <h3>Polestar 4 Long Range Single Motor</h3>
+                </div>
+                <p>A panoramic rear window (no conventional rear glass) is the boldest design move of the year. Underneath, a 100 kWh LFP battery delivers 360 miles with near-zero degradation expected over eight years — backed by a market-leading warranty.</p>
+                <div class="ev-stats">
+                    <div class="stat"><span class="stat-label">Rating</span><span class="stars">★★★★</span></div>
+                    <div class="stat"><span class="stat-label">Range</span><span class="stat-value">360 mi</span></div>
+                    <div class="stat"><span class="stat-label">Charge (10–80%)</span><span class="stat-value">28 min</span></div>
+                    <div class="stat"><span class="stat-label">Score</span><span class="stat-value">4.3 / 5.0</span></div>
+                </div>
+            </li>
+
+            <li class="ev-item">
+                <div class="ev-item-header">
+                    <div class="rank-badge">6</div>
+                    <h3>Volkswagen ID.7 Pro S</h3>
+                </div>
+                <p>VW's most refined EV yet. The 86 kWh battery and heat-pump standard fitment give it excellent cold-weather range retention. Ride comfort on the adaptive suspension is best-in-class at this price, and the 15-inch touchscreen has finally been tamed with physical shortcut controls.</p>
+                <div class="ev-stats">
+                    <div class="stat"><span class="stat-label">Rating</span><span class="stars">★★★★</span></div>
+                    <div class="stat"><span class="stat-label">Range</span><span class="stat-value">382 mi</span></div>
+                    <div class="stat"><span class="stat-label">Charge (10–80%)</span><span class="stat-value">30 min</span></div>
+                    <div class="stat"><span class="stat-label">Score</span><span class="stat-value">4.2 / 5.0</span></div>
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <!-- PULLQUOTE -->
+    <div class="pullquote">
+        <p>The gap between EVs and combustion cars on practicality has all but closed. In 2025, the question is no longer whether to switch — it's which one to choose.</p>
+        <cite>— Sofia Reeves, EV Technology Correspondent</cite>
+    </div>
+
+    <!-- COMPARISON TABLE -->
+    <section>
+        <h2>Side-by-Side Comparison</h2>
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Range</th>
+                    <th>Charge (10–80%)</th>
+                    <th>V2G</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>IONIQ 9 AWD</strong></td>
+                    <td>380 mi</td>
+                    <td>18 min</td>
+                    <td>Yes</td>
+                    <td><strong>5.0</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Mercedes EQS 450+</strong></td>
+                    <td>410 mi</td>
+                    <td>22 min</td>
+                    <td>No</td>
+                    <td><strong>4.8</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Kia EV9 GT</strong></td>
+                    <td>354 mi</td>
+                    <td>24 min</td>
+                    <td>Yes</td>
+                    <td><strong>4.6</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>BMW iX2 xDrive30</strong></td>
+                    <td>298 mi</td>
+                    <td>26 min</td>
+                    <td>No</td>
+                    <td><strong>4.4</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Polestar 4 LR</strong></td>
+                    <td>360 mi</td>
+                    <td>28 min</td>
+                    <td>Yes</td>
+                    <td><strong>4.3</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>VW ID.7 Pro S</strong></td>
+                    <td>382 mi</td>
+                    <td>30 min</td>
+                    <td>No</td>
+                    <td><strong>4.2</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- BUYER TIPS -->
+    <section>
+        <h2>What Buyers Should Know</h2>
+        <ul class="tips-list">
+            <li class="tip-item">
+                <div class="tip-number">1</div>
+                <p class="tip-text"><strong>Prioritise charging architecture over raw range.</strong> An 800V platform with 350 kW capability will serve you better day-to-day than an extra 30 miles of rated range on a 400V car.</p>
+            </li>
+            <li class="tip-item">
+                <div class="tip-number">2</div>
+                <p class="tip-text"><strong>Check real-world range at motorway speeds.</strong> Official WLTP figures can be 20–25% optimistic. Independent highway tests from 70 mph cruising are a far more honest benchmark.</p>
+            </li>
+            <li class="tip-item">
+                <div class="tip-number">3</div>
+                <p class="tip-text"><strong>Heat pump is non-negotiable in colder climates.</strong> Without one, range can drop by 35–40% in winter. All six models reviewed here include it as standard or a low-cost option.</p>
+            </li>
+            <li class="tip-item">
+                <div class="tip-number">4</div>
+                <p class="tip-text"><strong>Evaluate battery chemistry.</strong> LFP cells (Lithium Iron Phosphate) tolerate daily 100% charging with minimal degradation — ideal if your regular commute demands a full charge every night.</p>
+            </li>
+            <li class="tip-item">
+                <div class="tip-number">5</div>
+                <p class="tip-text"><strong>V2G can offset running costs significantly.</strong> If your energy tariff supports bidirectional export, models like the Kia EV9 and IONIQ 9 can earn back hundreds annually by feeding stored energy to the grid during peak hours.</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- VERDICT -->
+    <section>
+        <h2>Our Verdict</h2>
+        <p>The IONIQ 9 takes top spot for balancing every metric a real-world buyer cares about, while the EQS remains the luxury benchmark. For families needing seven seats, the EV9 GT is unmatched. Whichever model fits your budget, the 2025 EV class represents the strongest case for making the switch yet — with charging infrastructure and software quality finally matching the hardware ambition.</p>
+    </section>
+
+    <!-- TAGS -->
+    <div class="tags">
+        <span class="tag">Electric Vehicles</span>
+        <span class="tag">EV 2025</span>
+        <span class="tag">Charging</span>
+        <span class="tag">Battery Tech</span>
+        <span class="tag">V2G</span>
+        <span class="tag">IONIQ 9</span>
+        <span class="tag">Sustainability</span>
+        <span class="tag">Car Review</span>
+    </div>
+
+</div>
+
+</body>
+</html>

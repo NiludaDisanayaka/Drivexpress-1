@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Interior Materials Affect Comfort and Longevity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --nav-dark: #112a3d;
+            --accent: #f59e0b;
+            --teal: #0d9488;
+            --muted: #6b7280;
+        }
+
+        body {
+            font-family: 'DM Sans', Arial, sans-serif;
+            background: linear-gradient(to right, #eef2f7, #f9fbfd);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .terms-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        /* ── META ── */
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .meta-badge {
+            background: var(--teal);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 20px;
+        }
+
+        .meta-dot {
+            width: 4px;
+            height: 4px;
+            background: #cbd5e1;
+            border-radius: 50%;
+        }
+
+        .meta-date { font-size: 13px; color: var(--muted); }
+
+        /* ── TITLE ── */
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 34px;
+            font-weight: 800;
+            color: #1f2933;
+            line-height: 1.25;
+            margin-bottom: 14px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .title-divider {
+            border: none;
+            border-top: 2px solid #eef2f7;
+            margin-bottom: 32px;
+        }
+
+        /* ── AUTHOR ── */
+        .author-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 36px;
+        }
+
+        .author-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #112a3d, #1a3a52);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .author-info .name { font-size: 14px; font-weight: 600; color: #112a3d; }
+        .author-info .role { font-size: 12px; color: var(--muted); }
+
+        .read-time {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            margin-bottom: 28px;
+            padding-left: 15px;
+            border-left: 4px solid #1a3a52;
+        }
+
+        section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a3a52;
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        section p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        /* ── MATERIAL HERO CARDS ── */
+        .material-trio {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-bottom: 36px;
+        }
+
+        .material-hero {
+            border-radius: 12px;
+            padding: 22px 18px 18px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .material-hero.leather {
+            background: linear-gradient(160deg, #2c1810 0%, #3d2218 100%);
+            color: #fff;
+        }
+
+        .material-hero.cloth {
+            background: linear-gradient(160deg, #1e3a5f 0%, #112a3d 100%);
+            color: #fff;
+        }
+
+        .material-hero.synthetic {
+            background: linear-gradient(160deg, #134e4a 0%, #0d3d39 100%);
+            color: #fff;
+        }
+
+        .material-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.06;
+        }
+
+        .material-hero.leather .material-pattern {
+            background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
+            background-size: 8px 8px;
+        }
+
+        .material-hero.cloth .material-pattern {
+            background-image: repeating-linear-gradient(0deg, #fff 0, #fff 1px, transparent 0, transparent 6px),
+                              repeating-linear-gradient(90deg, #fff 0, #fff 1px, transparent 0, transparent 6px);
+            background-size: 6px 6px;
+        }
+
+        .material-hero.synthetic .material-pattern {
+            background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+            background-size: 10px 10px;
+        }
+
+        .material-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .material-icon svg {
+            stroke: #fff;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .material-hero h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 4px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .material-hero .material-sub {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .material-score-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .m-score {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .m-score-val {
+            font-size: 18px;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+        }
+
+        .m-score-label {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ── MATERIAL DEEP-DIVE CARDS ── */
+        .material-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .material-item {
+            background: #f8fafc;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .material-item:hover {
+            box-shadow: 0 6px 20px rgba(17,42,61,0.1);
+        }
+
+        .material-header-bar {
+            padding: 14px 22px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .material-item.leather-item .material-header-bar { background: linear-gradient(90deg, #2c1810, #3d2218); }
+        .material-item.cloth-item   .material-header-bar { background: linear-gradient(90deg, #112a3d, #1a3a52); }
+        .material-item.synthetic-item .material-header-bar { background: linear-gradient(90deg, #134e4a, #0d9488); }
+
+        .material-header-bar h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: #fff;
+            flex: 1;
+        }
+
+        .overall-score {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .overall-score span {
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.7;
+        }
+
+        .material-body {
+            padding: 20px 22px;
+        }
+
+        .material-body > p {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+
+        /* ATTRIBUTE BARS */
+        .attr-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 24px;
+            margin-bottom: 16px;
+        }
+
+        .attr-row {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .attr-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .attr-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: #9ca3af;
+        }
+
+        .attr-score {
+            font-size: 12px;
+            font-weight: 700;
+            color: #112a3d;
+        }
+
+        .attr-bar-wrap {
+            background: #e5e7eb;
+            border-radius: 20px;
+            height: 6px;
+            overflow: hidden;
+        }
+
+        .attr-bar-fill {
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        .leather-item  .attr-bar-fill { background: linear-gradient(90deg, #2c1810, #92400e); }
+        .cloth-item    .attr-bar-fill { background: linear-gradient(90deg, #112a3d, #3b82f6); }
+        .synthetic-item .attr-bar-fill { background: linear-gradient(90deg, #0d9488, #10b981); }
+
+        /* PROS/CONS */
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .pros-block, .cons-block {
+            border-radius: 8px;
+            padding: 14px 16px;
+        }
+
+        .pros-block {
+            background: #f0fdf4;
+            border-left: 3px solid #10b981;
+        }
+
+        .cons-block {
+            background: #fff7ed;
+            border-left: 3px solid var(--accent);
+        }
+
+        .pros-block h5, .cons-block h5 {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .pros-block h5 { color: #065f46; }
+        .cons-block h5 { color: #92400e; }
+
+        .pros-block ul, .cons-block ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .pros-block ul li, .cons-block ul li {
+            font-size: 13px;
+            color: #374151;
+            line-height: 1.5;
+            display: flex;
+            gap: 6px;
+        }
+
+        .pros-block ul li::before { content: '✓'; color: #10b981; font-weight: 700; flex-shrink: 0; }
+        .cons-block ul li::before { content: '✕'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+        /* BEST FOR PILL */
+        .best-for {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 14px;
+            padding: 10px 14px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            font-size: 13px;
+            color: #374151;
+        }
+
+        .best-for-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--teal);
+            white-space: nowrap;
+        }
+
+        /* ── LONGEVITY TIMELINE ── */
+        .timeline {
+            position: relative;
+            margin-top: 20px;
+            padding-left: 28px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #112a3d, #cbd5e1);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--nav-dark);
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px var(--nav-dark);
+        }
+
+        .timeline-year {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 4px;
+        }
+
+        .timeline-item h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #112a3d;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.65;
+        }
+
+        .timeline-bars {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tbar {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+
+        .tbar-leather  { background: #fef3c7; color: #78350f; }
+        .tbar-cloth    { background: #dbeafe; color: #1e40af; }
+        .tbar-synthetic{ background: #ccfbf1; color: #065f46; }
+
+        /* ── PULLQUOTE ── */
+        .pullquote {
+            background: linear-gradient(135deg, #112a3d, #1a3a52);
+            padding: 28px 32px;
+            border-radius: 10px;
+            margin: 32px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pullquote::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 100px;
+            line-height: 1;
+            color: rgba(13,148,136,0.2);
+            position: absolute;
+            top: -8px;
+            left: 14px;
+        }
+
+        .pullquote p {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-style: italic;
+            line-height: 1.7;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
+
+        .pullquote cite {
+            display: block;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            color: #5eead4;
+            margin-top: 12px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── FULL COMPARISON TABLE ── */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        .spec-table th {
+            background: #112a3d;
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .spec-table th.th-leather    { background: #2c1810; }
+        .spec-table th.th-cloth      { background: #1e3a5f; }
+        .spec-table th.th-synthetic  { background: #134e4a; }
+        .spec-table th:first-child   { border-radius: 6px 0 0 0; }
+        .spec-table th:last-child    { border-radius: 0 6px 0 0; }
+
+        .spec-table td {
+            padding: 10px 14px;
+            color: #374151;
+            border-bottom: 1px solid #f3f4f6;
+            vertical-align: top;
+        }
+
+        .spec-table tr:last-child td { border-bottom: none; }
+        .spec-table tr:nth-child(even) td { background: #f8fafc; }
+
+        .badge-best { background: #d1fae5; color: #065f46; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; }
+        .badge-mid  { background: #fef3c7; color: #92400e; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; }
+        .badge-low  { background: #fee2e2; color: #991b1b; font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 20px; }
+
+        /* ── BUYER PROFILES ── */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .profile-card {
+            border-radius: 10px;
+            padding: 18px 16px;
+        }
+
+        .profile-card.pc-leather  { background: #fdf6ee; border: 1.5px solid #d4a373; }
+        .profile-card.pc-cloth    { background: #eff6ff; border: 1.5px solid #93c5fd; }
+        .profile-card.pc-synthetic{ background: #f0fdfa; border: 1.5px solid #5eead4; }
+
+        .profile-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .pc-leather   h4 { color: #78350f; }
+        .pc-cloth     h4 { color: #1e40af; }
+        .pc-synthetic h4 { color: #065f46; }
+
+        .profile-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .profile-card ul li {
+            font-size: 13px;
+            color: #374151;
+            line-height: 1.5;
+            display: flex;
+            align-items: flex-start;
+            gap: 7px;
+        }
+
+        .profile-card ul li::before {
+            content: '→';
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 11px;
+            margin-top: 1px;
+        }
+
+        .pc-leather   ul li::before { color: #92400e; }
+        .pc-cloth     ul li::before { color: #1d4ed8; }
+        .pc-synthetic ul li::before { color: #0d9488; }
+
+        /* ── TAGS ── */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid #eef2f7;
+        }
+
+        .tag {
+            font-size: 12px;
+            font-weight: 500;
+            background: #eef2f7;
+            color: #112a3d;
+            padding: 5px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag:hover { background: #112a3d; color: #fff; }
+
+        @media (max-width: 640px) {
+            .terms-container { margin: 20px; padding: 24px; }
+            h1 { font-size: 24px; }
+            .material-trio, .profile-grid { grid-template-columns: 1fr; }
+            .attr-grid, .pros-cons { grid-template-columns: 1fr; }
+            section h2 { font-size: 16px; }
+            .spec-table { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="terms-container">
+
+    <!-- META -->
+    <div class="article-meta">
+        <span class="meta-badge">Interior Guide</span>
+        <span class="meta-dot"></span>
+        <span class="meta-date">Jun 2025</span>
+    </div>
+
+    <!-- TITLE -->
+    <h1>How Interior Materials Affect Comfort and Longevity</h1>
+    <p class="subtitle">Leather vs cloth vs synthetic — which interior will serve long-term owners best?</p>
+
+    <hr class="title-divider">
+
+    <!-- AUTHOR -->
+    <div class="author-row">
+        <div class="author-avatar">NW</div>
+        <div class="author-info">
+            <div class="name">Naomi Walsh</div>
+            <div class="role">Interior Design & Ownership Experience Editor</div>
+        </div>
+        <div class="read-time">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            10 min read
+        </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section>
+        <h2>Overview</h2>
+        <p>The interior material you sit in every day has a larger impact on long-term satisfaction than almost any other single feature — yet it's consistently underweighted in the buying process. Over a five-year ownership period, the wrong choice can mean cracked bolsters, persistent odours, uncomfortable temperature extremes, or a depreciated resale value. This guide breaks down the real-world performance of the three dominant interior materials across every dimension that matters to long-term owners.</p>
+    </section>
+
+    <!-- MATERIAL HERO SUMMARY -->
+    <div class="material-trio">
+
+        <div class="material-hero leather">
+            <div class="material-pattern"></div>
+            <div class="material-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3>Genuine Leather</h3>
+            <p class="material-sub">Premium · High Maintenance</p>
+            <div class="material-score-row">
+                <div class="m-score"><span class="m-score-val">8.2</span><span class="m-score-label">Comfort</span></div>
+                <div class="m-score"><span class="m-score-val">7.4</span><span class="m-score-label">Longevity</span></div>
+                <div class="m-score"><span class="m-score-val">6.8</span><span class="m-score-label">Ease</span></div>
+            </div>
+        </div>
+
+        <div class="material-hero cloth">
+            <div class="material-pattern"></div>
+            <div class="material-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+            </div>
+            <h3>Woven Cloth</h3>
+            <p class="material-sub">Practical · Low Maintenance</p>
+            <div class="material-score-row">
+                <div class="m-score"><span class="m-score-val">8.6</span><span class="m-score-label">Comfort</span></div>
+                <div class="m-score"><span class="m-score-val">8.0</span><span class="m-score-label">Longevity</span></div>
+                <div class="m-score"><span class="m-score-val">9.2</span><span class="m-score-label">Ease</span></div>
+            </div>
+        </div>
+
+        <div class="material-hero synthetic">
+            <div class="material-pattern"></div>
+            <div class="material-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Synthetic / Vegan</h3>
+            <p class="material-sub">Versatile · Mid Maintenance</p>
+            <div class="material-score-row">
+                <div class="m-score"><span class="m-score-val">8.0</span><span class="m-score-label">Comfort</span></div>
+                <div class="m-score"><span class="m-score-val">8.8</span><span class="m-score-label">Longevity</span></div>
+                <div class="m-score"><span class="m-score-val">9.0</span><span class="m-score-label">Ease</span></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- DEEP DIVE PER MATERIAL -->
+    <section>
+        <h2>Material Deep-Dives</h2>
+        <ul class="material-list">
+
+            <!-- LEATHER -->
+            <li class="material-item leather-item">
+                <div class="material-header-bar">
+                    <div class="material-icon" style="width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>Genuine Leather</h3>
+                    <div class="overall-score">8.2 <span>/ 10</span></div>
+                </div>
+                <div class="material-body">
+                    <p>Genuine leather remains the prestige choice — and for good reason. It ages with character, cleans with a wipe, and signals quality in a way no other material replicates. The trade-offs are real though: it heats to uncomfortable temperatures in summer sun, cracks without regular conditioning, and is significantly harder on the budget both at point of purchase and through ownership. For drivers who commute in temperate climates and commit to seasonal care, it can last 10–15 years looking excellent.</p>
+
+                    <div class="attr-grid">
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Temperature Comfort</span><span class="attr-score">5.5</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:55%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Durability</span><span class="attr-score">7.4</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:74%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Ease of Cleaning</span><span class="attr-score">8.5</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:85%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Resale Value Impact</span><span class="attr-score">9.0</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:90%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Maintenance Need</span><span class="attr-score">6.0</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:60%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Breathability</span><span class="attr-score">6.5</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:65%"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros-block">
+                            <h5>Strengths</h5>
+                            <ul>
+                                <li>Wipes clean in seconds — no soaking into fibres</li>
+                                <li>Improves resale value by 4–8% vs cloth equivalent</li>
+                                <li>Develops a patina that many owners prize over time</li>
+                                <li>Naturally odour-resistant once conditioned regularly</li>
+                            </ul>
+                        </div>
+                        <div class="cons-block">
+                            <h5>Weaknesses</h5>
+                            <ul>
+                                <li>Reaches 60°C+ in direct summer sun — painful on bare skin</li>
+                                <li>Cracks and dries without conditioning every 3–6 months</li>
+                                <li>Cold and stiff in winter until cabin warms up fully</li>
+                                <li>Scratches visibly from keys, buckles, and pets</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="best-for">
+                        <span class="best-for-label">Best For</span>
+                        <span>Temperate climate drivers, low-mileage owners, and buyers prioritising resale value and prestige feel.</span>
+                    </div>
+                </div>
+            </li>
+
+            <!-- CLOTH -->
+            <li class="material-item cloth-item">
+                <div class="material-header-bar">
+                    <div class="material-icon" style="width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+                    </div>
+                    <h3>Woven Cloth</h3>
+                    <div class="overall-score">8.6 <span>/ 10</span></div>
+                </div>
+                <div class="material-body">
+                    <p>Cloth is chronically underrated. Modern automotive-grade woven fabrics are dramatically more durable and stain-resistant than those of ten years ago — many now feature micro-fibre constructions that repel spills rather than absorb them. Cloth breathes year-round, never becomes painfully hot or cold, and requires almost zero active maintenance. Its only meaningful weakness is that it absorbs liquid stains and odours more readily if not treated promptly.</p>
+
+                    <div class="attr-grid">
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Temperature Comfort</span><span class="attr-score">9.2</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:92%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Durability</span><span class="attr-score">8.0</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:80%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Ease of Cleaning</span><span class="attr-score">7.0</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:70%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Resale Value Impact</span><span class="attr-score">6.0</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:60%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Maintenance Need</span><span class="attr-score">9.2</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:92%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Breathability</span><span class="attr-score">9.5</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:95%"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros-block">
+                            <h5>Strengths</h5>
+                            <ul>
+                                <li>Breathes year-round — comfortable in heat and cold equally</li>
+                                <li>No seasonal conditioning or special products needed</li>
+                                <li>Less slippery — better lateral support when cornering</li>
+                                <li>Significantly lower cost — saves $800–$2,000 vs leather option</li>
+                            </ul>
+                        </div>
+                        <div class="cons-block">
+                            <h5>Weaknesses</h5>
+                            <ul>
+                                <li>Absorbs liquid spills rapidly — speed of response critical</li>
+                                <li>Can retain odours (food, pets) more than leather or synthetic</li>
+                                <li>Pills and flattens on high-contact bolster areas after 5+ years</li>
+                                <li>Lower perceived prestige — impacts resale slightly vs leather</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="best-for">
+                        <span class="best-for-label">Best For</span>
+                        <span>Families, high-mileage daily drivers, hot or cold climate owners, and anyone who values comfort and practicality over prestige.</span>
+                    </div>
+                </div>
+            </li>
+
+            <!-- SYNTHETIC -->
+            <li class="material-item synthetic-item">
+                <div class="material-header-bar">
+                    <div class="material-icon" style="width:30px;height:30px;border-radius:6px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Synthetic / Vegan Leather</h3>
+                    <div class="overall-score">8.8 <span>/ 10</span></div>
+                </div>
+                <div class="material-body">
+                    <p>Modern synthetic materials — including polyurethane (PU), SensaTec, Dinamica, and Alcantara — have closed the quality gap with genuine leather significantly. The best examples are virtually indistinguishable by touch and offer superior durability on high-wear surfaces. They resist cracking, tolerate UV exposure far better than genuine hide, and clean as easily. The weakness historically was temperature, but newer microfibre and perforated synthetics manage heat considerably better than early PU materials.</p>
+
+                    <div class="attr-grid">
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Temperature Comfort</span><span class="attr-score">7.5</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:75%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Durability</span><span class="attr-score">8.8</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:88%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Ease of Cleaning</span><span class="attr-score">8.8</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:88%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Resale Value Impact</span><span class="attr-score">7.5</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:75%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">Maintenance Need</span><span class="attr-score">9.0</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:90%"></div></div>
+                        </div>
+                        <div class="attr-row">
+                            <div class="attr-top"><span class="attr-label">UV / Fade Resistance</span><span class="attr-score">9.2</span></div>
+                            <div class="attr-bar-wrap"><div class="attr-bar-fill" style="width:92%"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="pros-cons">
+                        <div class="pros-block">
+                            <h5>Strengths</h5>
+                            <ul>
+                                <li>Superior UV and crack resistance vs genuine leather</li>
+                                <li>Wipes clean instantly — no absorption risk</li>
+                                <li>Ethical choice — increasingly preferred by buyers</li>
+                                <li>Premium synthetics (Alcantara, Dinamica) rival genuine leather feel</li>
+                            </ul>
+                        </div>
+                        <div class="cons-block">
+                            <h5>Weaknesses</h5>
+                            <ul>
+                                <li>Budget PU materials peel and delaminate from year 4–5</li>
+                                <li>Some synthetics still heat uncomfortably in direct sun</li>
+                                <li>Less prestige perception — impacts some buyer segments on resale</li>
+                                <li>Alcantara-type materials attract lint and require specialist care</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="best-for">
+                        <span class="best-for-label">Best For</span>
+                        <span>All-climate drivers, eco-conscious buyers, families wanting easy cleaning, and anyone keeping the car beyond 7 years.</span>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <!-- PULLQUOTE -->
+    <div class="pullquote">
+        <p>The material that looks best on day one isn't always the material that looks best in year five. Buy for the life you'll actually live in this car — not the showroom moment.</p>
+        <cite>— Naomi Walsh, Interior Design & Ownership Experience Editor</cite>
+    </div>
+
+    <!-- LONGEVITY TIMELINE -->
+    <section>
+        <h2>What to Expect Over Time</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">Years 0–2</div>
+                <h4>Break-in Period</h4>
+                <p>All three materials perform well and look excellent with minimal effort. Genuine leather may show early surface scratches; cloth and synthetic are largely indistinguishable from new with basic vacuuming.</p>
+                <div class="timeline-bars">
+                    <span class="tbar tbar-leather">Leather: excellent</span>
+                    <span class="tbar tbar-cloth">Cloth: excellent</span>
+                    <span class="tbar tbar-synthetic">Synthetic: excellent</span>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">Years 3–5</div>
+                <h4>Wear Differentiation</h4>
+                <p>Unconditioned leather begins to show drying and cracking on bolsters and door pulls. Cloth shows flattening on high-contact areas. Quality synthetic holds form — budget PU may begin surface peeling at edges and seams.</p>
+                <div class="timeline-bars">
+                    <span class="tbar tbar-leather">Leather: fair (if conditioned)</span>
+                    <span class="tbar tbar-cloth">Cloth: good</span>
+                    <span class="tbar tbar-synthetic">Synthetic: very good</span>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">Years 6–8</div>
+                <h4>Long-Term Divergence</h4>
+                <p>Well-maintained leather can still look impressive. Neglected leather will crack and fade badly. Modern cloth holds up well overall. Quality synthetics continue outperforming — budget materials have typically delaminated by this point.</p>
+                <div class="timeline-bars">
+                    <span class="tbar tbar-leather">Leather: variable</span>
+                    <span class="tbar tbar-cloth">Cloth: good</span>
+                    <span class="tbar tbar-synthetic">Synthetic (quality): best</span>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">Years 9+</div>
+                <h4>End-of-Ownership Condition</h4>
+                <p>Resale buyers will pay a premium for excellent leather; average leather commands no advantage. Cloth remains clean and functional. Premium synthetic often looks better than leather at equivalent age — its resistance to UV and cracking is a genuine long-game advantage.</p>
+                <div class="timeline-bars">
+                    <span class="tbar tbar-leather">Leather: conditional</span>
+                    <span class="tbar tbar-cloth">Cloth: consistent</span>
+                    <span class="tbar tbar-synthetic">Synthetic: outstanding</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL COMPARISON TABLE -->
+    <section>
+        <h2>Full Attribute Comparison</h2>
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th class="th-leather">Genuine Leather</th>
+                    <th class="th-cloth">Woven Cloth</th>
+                    <th class="th-synthetic">Synthetic</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Summer Temperature</strong></td>
+                    <td><span class="badge-low">Gets Very Hot</span></td>
+                    <td><span class="badge-best">Stays Cool</span></td>
+                    <td><span class="badge-mid">Moderate</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Winter Temperature</strong></td>
+                    <td><span class="badge-low">Cold & Stiff</span></td>
+                    <td><span class="badge-best">Neutral</span></td>
+                    <td><span class="badge-mid">Slightly Cold</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Spill Resistance</strong></td>
+                    <td><span class="badge-best">Excellent</span></td>
+                    <td><span class="badge-low">Absorbs Fast</span></td>
+                    <td><span class="badge-best">Excellent</span></td>
+                </tr>
+                <tr>
+                    <td><strong>UV & Crack Resistance</strong></td>
+                    <td><span class="badge-low">Cracks if Dry</span></td>
+                    <td><span class="badge-best">Fades Slowly</span></td>
+                    <td><span class="badge-best">Outstanding</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Maintenance Required</strong></td>
+                    <td><span class="badge-low">High — Conditioning</span></td>
+                    <td><span class="badge-best">Low</span></td>
+                    <td><span class="badge-mid">Low–Medium</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Odour Resistance</strong></td>
+                    <td><span class="badge-best">Good</span></td>
+                    <td><span class="badge-low">Absorbs Odours</span></td>
+                    <td><span class="badge-best">Good</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Resale Value Impact</strong></td>
+                    <td><span class="badge-best">+4–8%</span></td>
+                    <td><span class="badge-mid">Neutral</span></td>
+                    <td><span class="badge-mid">Slight Positive</span></td>
+                </tr>
+                <tr>
+                    <td><strong>10-Year Durability</strong></td>
+                    <td><span class="badge-mid">Good if Maintained</span></td>
+                    <td><span class="badge-best">Consistent</span></td>
+                    <td><span class="badge-best">Best (quality grade)</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Ethical / Sustainability</strong></td>
+                    <td><span class="badge-low">Animal Derived</span></td>
+                    <td><span class="badge-best">Synthetic Fibre</span></td>
+                    <td><span class="badge-best">Vegan</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Typical Cost Premium</strong></td>
+                    <td><span class="badge-low">+$800–$2,000</span></td>
+                    <td><span class="badge-best">Base Price</span></td>
+                    <td><span class="badge-mid">+$400–$1,000</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- WHO SHOULD CHOOSE WHAT -->
+    <section>
+        <h2>Which Material Is Right for You?</h2>
+        <div class="profile-grid">
+            <div class="profile-card pc-leather">
+                <h4>Choose Leather if…</h4>
+                <ul>
+                    <li>You live in a temperate climate with mild summers</li>
+                    <li>Resale value at 3–5 years is important to you</li>
+                    <li>You drive fewer than 12,000 miles per year</li>
+                    <li>You're willing to condition seats every 3–6 months</li>
+                    <li>Prestige feel and appearance are primary priorities</li>
+                </ul>
+            </div>
+            <div class="profile-card pc-cloth">
+                <h4>Choose Cloth if…</h4>
+                <ul>
+                    <li>You live in an extreme hot or cold climate</li>
+                    <li>You have children or pets in the car regularly</li>
+                    <li>You drive 20,000+ miles annually</li>
+                    <li>You want zero maintenance obligations</li>
+                    <li>Budget saving matters more than prestige</li>
+                </ul>
+            </div>
+            <div class="profile-card pc-synthetic">
+                <h4>Choose Synthetic if…</h4>
+                <ul>
+                    <li>You're keeping the car for 7+ years</li>
+                    <li>Ethical or vegan preferences are important</li>
+                    <li>You want leather-like feel with lower maintenance</li>
+                    <li>You live in a sunny, high-UV environment</li>
+                    <li>You want spill resistance without full leather cost</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- VERDICT -->
+    <section>
+        <h2>Our Verdict</h2>
+        <p>For pure long-term ownership value, quality synthetic materials — particularly microfibre-based options from premium brands — are the rational choice. They resist cracking, tolerate UV, clean easily, and increasingly match genuine leather in perceived quality. Cloth remains the most comfortable, most practical, and most undervalued choice for everyday owners who prioritise how a car feels over how it looks. Genuine leather earns its premium only for owners committed to proper care — and those who will sell within five years to buyers who value it.</p>
+    </section>
+
+    <!-- TAGS -->
+    <div class="tags">
+        <span class="tag">Interior Materials</span>
+        <span class="tag">Leather vs Cloth</span>
+        <span class="tag">Synthetic Leather</span>
+        <span class="tag">Longevity</span>
+        <span class="tag">Ownership Costs</span>
+        <span class="tag">Comfort</span>
+        <span class="tag">Resale Value</span>
+        <span class="tag">Buyer's Guide</span>
+    </div>
+
+</div>
+
+</body>
+</html>

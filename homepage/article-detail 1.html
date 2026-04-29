@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Lexus Showdown: Top 5 Family Cars Reviewed</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --nav-dark: #112a3d;
+            --accent: #f59e0b;
+            --muted: #6b7280;
+        }
+
+        body {
+            font-family: 'DM Sans', Arial, sans-serif;
+            background: linear-gradient(to right, #eef2f7, #f9fbfd);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .terms-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        /* META */
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .meta-badge {
+            background: var(--accent);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .meta-dot {
+            width: 4px;
+            height: 4px;
+            background: #cbd5e1;
+            border-radius: 50%;
+        }
+
+        .meta-date {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* TITLE */
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 34px;
+            font-weight: 800;
+            color: #1f2933;
+            line-height: 1.25;
+            letter-spacing: 0.2px;
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .title-divider {
+            border: none;
+            border-top: 2px solid #eef2f7;
+            margin-bottom: 32px;
+        }
+
+        /* AUTHOR */
+        .author-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 36px;
+        }
+
+        .author-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #112a3d, #1a3a52);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .author-info .name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #112a3d;
+        }
+
+        .author-info .role {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .read-time {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 28px;
+            padding-left: 15px;
+            border-left: 4px solid #1a3a52;
+        }
+
+        section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a3a52;
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        section p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        /* CAR LIST */
+        .car-list {
+            list-style: none;
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .car-item {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 20px 22px;
+            border-left: 4px solid var(--accent);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .car-item:hover {
+            box-shadow: 0 4px 16px rgba(17,42,61,0.09);
+        }
+
+        .car-item-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .rank-badge {
+            background: var(--nav-dark);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .car-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: #112a3d;
+        }
+
+        .car-item p {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.75;
+        }
+
+        .car-stats {
+            display: flex;
+            gap: 18px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .stat { display: flex; flex-direction: column; gap: 2px; }
+
+        .stat-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #9ca3af;
+        }
+
+        .stat-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: #112a3d;
+        }
+
+        .stars { color: var(--accent); font-size: 13px; letter-spacing: 1px; }
+
+        /* PULLQUOTE */
+        .pullquote {
+            background: linear-gradient(135deg, #112a3d, #1a3a52);
+            color: #fff;
+            padding: 28px 32px;
+            border-radius: 10px;
+            margin: 32px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pullquote::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 100px;
+            line-height: 1;
+            color: rgba(245,158,11,0.18);
+            position: absolute;
+            top: -8px;
+            left: 14px;
+        }
+
+        .pullquote p {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-style: italic;
+            line-height: 1.7;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
+
+        .pullquote cite {
+            display: block;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 12px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+
+        /* SPEC TABLE */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        .spec-table th {
+            background: #112a3d;
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .spec-table th:first-child { border-radius: 6px 0 0 0; }
+        .spec-table th:last-child  { border-radius: 0 6px 0 0; }
+
+        .spec-table td {
+            padding: 10px 14px;
+            color: #374151;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .spec-table tr:last-child td { border-bottom: none; }
+        .spec-table tr:nth-child(even) td { background: #f8fafc; }
+
+        /* TAGS */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid #eef2f7;
+        }
+
+        .tag {
+            font-size: 12px;
+            font-weight: 500;
+            background: #eef2f7;
+            color: #112a3d;
+            padding: 5px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag:hover { background: #112a3d; color: #fff; }
+
+        @media (max-width: 600px) {
+            .terms-container { margin: 20px; padding: 25px; }
+            h1 { font-size: 24px; }
+            section h2 { font-size: 16px; }
+            .spec-table { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="terms-container">
+
+    <div class="article-meta">
+        <span class="meta-badge">Car Reviews</span>
+        <span class="meta-dot"></span>
+        <span class="meta-date">Jan 2025</span>
+    </div>
+
+    <h1>2025 Lexus Showdown: Top 5 Family Cars Reviewed</h1>
+    <p class="subtitle">An in-depth look at reliability, comfort and safety features across the newest family-friendly sedans.</p>
+
+    <hr class="title-divider">
+
+    <div class="author-row">
+        <div class="author-avatar">JH</div>
+        <div class="author-info">
+            <div class="name">James Hartwell</div>
+            <div class="role">Senior Automotive Editor</div>
+        </div>
+        <div class="read-time">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            12 min read
+        </div>
+    </div>
+
+    <section>
+        <h2>Overview</h2>
+        <p>We put Lexus's five most family-oriented models through their paces — evaluating reliability, comfort, safety technology, and real-world practicality. Each vehicle was driven across city streets, motorways, and rural roads over three weeks. The 2025 lineup is arguably the brand's most refined to date, with renewed focus on hybrid powertrains and advanced driver-assistance systems.</p>
+    </section>
+
+    <section>
+        <h2>The Top 5 Ranked</h2>
+        <ul class="car-list">
+
+            <li class="car-item">
+                <div class="car-item-header">
+                    <div class="rank-badge">1</div>
+                    <h3>Lexus RX 500h F Sport Performance</h3>
+                </div>
+                <p>The undisputed flagship of the family range. A turbocharged hybrid system delivers 366 hp while returning impressive efficiency. The cabin is spacious for five, with best-in-class driver-assistance tech and premium Mark Levinson audio as standard at this trim.</p>
+                <div class="car-stats">
+                    <div class="stat"><span class="stat-label">Rating</span><span class="stars">★★★★★</span></div>
+                    <div class="stat"><span class="stat-label">Fuel Economy</span><span class="stat-value">38 mpg</span></div>
+                    <div class="stat"><span class="stat-label">Seating</span><span class="stat-value">5 passengers</span></div>
+                    <div class="stat"><span class="stat-label">Score</span><span class="stat-value">5.0 / 5.0</span></div>
+                </div>
+            </li>
+
+            <li class="car-item">
+                <div class="car-item-header">
+                    <div class="rank-badge">2</div>
+                    <h3>Lexus NX 350h Premium</h3>
+                </div>
+                <p>Outstanding fuel economy at 42 mpg combined and a plush, well-considered interior make this the savvy family choice. Boot space is surprisingly generous and the 2025 infotainment upgrade resolves most previous interface criticisms.</p>
+                <div class="car-stats">
+                    <div class="stat"><span class="stat-label">Rating</span><span class="stars">★★★★</span></div>
+                    <div class="stat"><span class="stat-label">Fuel Economy</span><span class="stat-value">42 mpg</span></div>
+                    <div class="stat"><span class="stat-label">Seating</span><span class="stat-value">5 passengers</span></div>
+                    <div class="stat"><span class="stat-label">Score</span><span class="stat-value">4.6 / 5.0</span></div>
+                </div>
+            </li>
+
+            <li class="car-item">
+                <div class="car-item-header">
+                    <div class="rank-badge">3</div>
+                    <h3>Lexus TX 500h AWD</h3>
+                </div>
+                <p>Three genuine rows, a panoramic sunroof, and 400 hp from its twin-turbo hybrid powertrain. The TX is built for families who need seven-seat versatility without compromising on luxury or driving dynamics.</p>
+                <div class="car-stats">
+                    <div class="stat"><span class="stat-label">Rating</span><span class="stars">★★★★</span></div>
+                    <div class="stat"><span class="stat-label">Fuel Economy</span><span class="stat-value">35 mpg</span></div>
+                    <div class="stat"><span class="stat-label">Seating</span><span class="stat-value">7 passengers</span></div>
+                    <div class="stat"><span class="stat-label">Score</span><span class="stat-value">4.4 / 5.0</span></div>
+                </div>
+            </li>
+
+            <li class="car-item">
+                <div class="car-item-header">
+                    <div class="rank-badge">4</div>
+                    <h3>Lexus ES 300h Executive</h3>
+                </div>
+                <p>A silky-smooth saloon with a whisper-quiet hybrid drivetrain and rear legroom that rivals business-class cabins. The understated choice for families who prefer refined elegance over SUV practicality.</p>
+                <div class="car-stats">
+                    <div class="stat"><span class="stat-label">Rating</span><span class="stars">★★★★</span></div>
+                    <div class="stat"><span class="stat-label">Fuel Economy</span><span class="stat-value">44 mpg</span></div>
+                    <div class="stat"><span class="stat-label">Seating</span><span class="stat-value">5 passengers</span></div>
+                    <div class="stat"><span class="stat-label">Score</span><span class="stat-value">4.3 / 5.0</span></div>
+                </div>
+            </li>
+
+            <li class="car-item">
+                <div class="car-item-header">
+                    <div class="rank-badge">5</div>
+                    <h3>Lexus UX 300h Luxury</h3>
+                </div>
+                <p>Compact dimensions and sharp steering make it the ideal pick for urban families. At 44 mpg it leads the group on efficiency, though rear-seat legroom remains the one trade-off at this size.</p>
+                <div class="car-stats">
+                    <div class="stat"><span class="stat-label">Rating</span><span class="stars">★★★★</span></div>
+                    <div class="stat"><span class="stat-label">Fuel Economy</span><span class="stat-value">44 mpg</span></div>
+                    <div class="stat"><span class="stat-label">Seating</span><span class="stat-value">5 passengers</span></div>
+                    <div class="stat"><span class="stat-label">Score</span><span class="stat-value">4.2 / 5.0</span></div>
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <div class="pullquote">
+        <p>The 2025 Lexus range has raised the bar for what a family car should feel like — every model here is more refined, more capable, and more safety-conscious than its predecessor.</p>
+        <cite>— James Hartwell, Senior Automotive Editor</cite>
+    </div>
+
+    <section>
+        <h2>Safety &amp; Technology</h2>
+        <p>Every model ships with Lexus Safety System+ 3.0 as standard — encompassing pre-collision warning with pedestrian and cyclist detection, radar cruise control, lane-keep assist, and the new Emergency Steering Assist. The updated 14-inch touchscreen, now powered by a dedicated graphics chip, is a genuine step forward. Wireless Apple CarPlay and Android Auto are standard across the entire range.</p>
+    </section>
+
+    <section>
+        <h2>Side-by-Side Comparison</h2>
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Fuel Economy</th>
+                    <th>Seats</th>
+                    <th>Safety</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>RX 500h F Sport</strong></td>
+                    <td>38 mpg</td>
+                    <td>5</td>
+                    <td>★★★★★</td>
+                    <td><strong>5.0</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>NX 350h Premium</strong></td>
+                    <td>42 mpg</td>
+                    <td>5</td>
+                    <td>★★★★</td>
+                    <td><strong>4.6</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>TX 500h AWD</strong></td>
+                    <td>35 mpg</td>
+                    <td>7</td>
+                    <td>★★★★</td>
+                    <td><strong>4.4</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>ES 300h Executive</strong></td>
+                    <td>44 mpg</td>
+                    <td>5</td>
+                    <td>★★★★</td>
+                    <td><strong>4.3</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>UX 300h Luxury</strong></td>
+                    <td>44 mpg</td>
+                    <td>5</td>
+                    <td>★★★★</td>
+                    <td><strong>4.2</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Our Verdict</h2>
+        <p>Whether you're a growing family eyeing the spacious RX 500h, a city commuter drawn to the nimble UX, or a parent needing all seven seats in the TX — the 2025 Lexus lineup has a compelling answer. The brand's hybrid expertise shines throughout, delivering efficiency and performance without compromise.</p>
+    </section>
+
+    <div class="tags">
+        <span class="tag">Lexus</span>
+        <span class="tag">Family Cars</span>
+        <span class="tag">Hybrid</span>
+        <span class="tag">SUV</span>
+        <span class="tag">2025</span>
+        <span class="tag">Safety</span>
+        <span class="tag">Car Review</span>
+        <span class="tag">Sedans</span>
+    </div>
+
+</div>
+
+</body>
+</html>

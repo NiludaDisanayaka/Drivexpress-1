@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Technology: Advanced Safety Features Explained</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --nav-dark: #112a3d;
+            --accent: #f59e0b;
+            --blue: #3b82f6;
+            --muted: #6b7280;
+        }
+
+        body {
+            font-family: 'DM Sans', Arial, sans-serif;
+            background: linear-gradient(to right, #eef2f7, #f9fbfd);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .terms-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        /* META */
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .meta-badge {
+            background: var(--blue);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 20px;
+        }
+
+        .meta-dot {
+            width: 4px;
+            height: 4px;
+            background: #cbd5e1;
+            border-radius: 50%;
+        }
+
+        .meta-date { font-size: 13px; color: var(--muted); }
+
+        /* TITLE */
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 34px;
+            font-weight: 800;
+            color: #1f2933;
+            line-height: 1.25;
+            letter-spacing: 0.2px;
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .title-divider {
+            border: none;
+            border-top: 2px solid #eef2f7;
+            margin-bottom: 32px;
+        }
+
+        /* AUTHOR */
+        .author-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 36px;
+        }
+
+        .author-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #112a3d, #1a3a52);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .author-info .name { font-size: 14px; font-weight: 600; color: #112a3d; }
+        .author-info .role { font-size: 12px; color: var(--muted); }
+
+        .read-time {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* SECTIONS */
+        section {
+            margin-bottom: 28px;
+            padding-left: 15px;
+            border-left: 4px solid #1a3a52;
+        }
+
+        section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a3a52;
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        section p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        /* FEATURE CARDS */
+        .feature-list {
+            list-style: none;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .feature-item {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 22px 24px;
+            border-left: 4px solid var(--blue);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 4px 16px rgba(17, 42, 61, 0.09);
+        }
+
+        .feature-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .feature-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #112a3d, #1a3a52);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon svg {
+            stroke: #fff;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .feature-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: #112a3d;
+        }
+
+        .feature-item > p {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.75;
+            margin-bottom: 14px;
+        }
+
+        /* VERDICT ROW */
+        .verdict-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .verdict-pill {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .pill-works {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .pill-partial {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .pill-caution {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* SCORE BARS */
+        .score-block {
+            margin-top: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .score-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .score-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--muted);
+            width: 110px;
+            flex-shrink: 0;
+        }
+
+        .score-bar-wrap {
+            flex: 1;
+            background: #e5e7eb;
+            border-radius: 20px;
+            height: 7px;
+            overflow: hidden;
+        }
+
+        .score-bar-fill {
+            height: 100%;
+            border-radius: 20px;
+            background: linear-gradient(90deg, #112a3d, #3b82f6);
+            transition: width 0.6s ease;
+        }
+
+        .score-num {
+            font-size: 12px;
+            font-weight: 700;
+            color: #112a3d;
+            width: 28px;
+            text-align: right;
+        }
+
+        /* HIGHLIGHT GRID */
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .highlight-box {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 18px 20px;
+            border-top: 3px solid var(--nav-dark);
+        }
+
+        .highlight-box h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #112a3d;
+            margin-bottom: 7px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box p {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .icon-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--blue);
+            flex-shrink: 0;
+        }
+
+        /* COMPARISON TABLE */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        .spec-table th {
+            background: #112a3d;
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .spec-table th:first-child { border-radius: 6px 0 0 0; }
+        .spec-table th:last-child  { border-radius: 0 6px 0 0; }
+
+        .spec-table td {
+            padding: 10px 14px;
+            color: #374151;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .spec-table tr:last-child td { border-bottom: none; }
+        .spec-table tr:nth-child(even) td { background: #f8fafc; }
+
+        .badge-yes {
+            background: #d1fae5;
+            color: #065f46;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+        .badge-partial {
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+        .badge-no {
+            background: #f3f4f6;
+            color: #9ca3af;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+        /* PULLQUOTE */
+        .pullquote {
+            background: linear-gradient(135deg, #112a3d, #1a3a52);
+            padding: 28px 32px;
+            border-radius: 10px;
+            margin: 32px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pullquote::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 100px;
+            line-height: 1;
+            color: rgba(59, 130, 246, 0.18);
+            position: absolute;
+            top: -8px;
+            left: 14px;
+        }
+
+        .pullquote p {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-style: italic;
+            line-height: 1.7;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
+
+        .pullquote cite {
+            display: block;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            color: #93c5fd;
+            margin-top: 12px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+
+        /* BUYER TIPS */
+        .tips-list {
+            list-style: none;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+
+        .tip-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .tip-number {
+            background: var(--blue);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            min-width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .tip-text {
+            font-size: 15px;
+            line-height: 1.75;
+            color: #374151;
+        }
+
+        .tip-text strong { color: #112a3d; }
+
+        /* LEGEND */
+        .legend {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #6b7280;
+        }
+
+        /* TAGS */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid #eef2f7;
+        }
+
+        .tag {
+            font-size: 12px;
+            font-weight: 500;
+            background: #eef2f7;
+            color: #112a3d;
+            padding: 5px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag:hover { background: #112a3d; color: #fff; }
+
+        @media (max-width: 600px) {
+            .terms-container { margin: 20px; padding: 25px; }
+            h1 { font-size: 24px; }
+            section h2 { font-size: 16px; }
+            .highlight-grid { grid-template-columns: 1fr; }
+            .spec-table { font-size: 12px; }
+            .score-label { width: 80px; font-size: 11px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="terms-container">
+
+    <!-- META -->
+    <div class="article-meta">
+        <span class="meta-badge">Smart Technology</span>
+        <span class="meta-dot"></span>
+        <span class="meta-date">Feb 2025</span>
+    </div>
+
+    <!-- TITLE -->
+    <h1>Smart Technology: Advanced Safety Features Explained</h1>
+    <p class="subtitle">A buyer's guide to lane assist, adaptive cruise and driver monitoring systems — what works, what doesn't.</p>
+
+    <hr class="title-divider">
+
+    <!-- AUTHOR -->
+    <div class="author-row">
+        <div class="author-avatar">DK</div>
+        <div class="author-info">
+            <div class="name">Daniel Kroft</div>
+            <div class="role">Automotive Safety Technology Editor</div>
+        </div>
+        <div class="read-time">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            11 min read
+        </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section>
+        <h2>Overview</h2>
+        <p>Advanced driver-assistance systems (ADAS) are now standard across almost every new car price point — but not all systems are equal. Some deliver genuine safety benefits backed by independent testing data; others feel under-developed, intrusive, or inconsistent in real-world conditions. This guide breaks down the six most common features, how they work, and which implementations buyers should seek out or avoid.</p>
+    </section>
+
+    <!-- HOW THEY'RE TESTED -->
+    <section>
+        <h2>How We Evaluate Safety Tech</h2>
+        <p>Each feature was assessed across four dimensions — reliability in varied conditions, driver confidence impact, intervention accuracy, and ease of adjustment. Scores reflect real-world performance, not manufacturer claims or laboratory test results alone.</p>
+        <div class="highlight-grid">
+            <div class="highlight-box">
+                <h4><span class="icon-dot"></span>Reliability</h4>
+                <p>How consistently does the system perform across motorways, urban roads, rain, glare, and road markings of varying quality?</p>
+            </div>
+            <div class="highlight-box">
+                <h4><span class="icon-dot"></span>Accuracy</h4>
+                <p>Does the system intervene at the right moment, or does it generate false positives that train drivers to ignore warnings?</p>
+            </div>
+            <div class="highlight-box">
+                <h4><span class="icon-dot"></span>Driver Confidence</h4>
+                <p>Does the feature reduce stress and fatigue on long journeys, or create anxiety through unexpected inputs?</p>
+            </div>
+            <div class="highlight-box">
+                <h4><span class="icon-dot"></span>Adjustability</h4>
+                <p>Can the driver customise sensitivity levels, response thresholds, and activation preferences without deep menu-diving?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURE BREAKDOWN -->
+    <section>
+        <h2>Feature-by-Feature Breakdown</h2>
+
+        <div class="legend">
+            <div class="legend-item"><span class="verdict-pill pill-works">✓ Works Well</span> Reliable in most conditions</div>
+            <div class="legend-item"><span class="verdict-pill pill-partial">~ Partial</span> Works with caveats</div>
+            <div class="legend-item"><span class="verdict-pill pill-caution">✕ Use Caution</span> Inconsistent or intrusive</div>
+        </div>
+
+        <ul class="feature-list">
+
+            <!-- 1. Adaptive Cruise Control -->
+            <li class="feature-item">
+                <div class="feature-header">
+                    <div class="feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                    </div>
+                    <h3>Adaptive Cruise Control (ACC)</h3>
+                </div>
+                <p>ACC maintains a set speed while automatically adjusting to the distance of the vehicle ahead using radar or lidar. Modern implementations now include full stop-and-go capability — slowing to a complete halt in traffic and resuming without driver input. Best-in-class systems from Toyota, Volvo, and Mercedes handle lane changes, speed limit adjustments, and motorway merges with minimal intervention needed.</p>
+                <div class="verdict-row">
+                    <span class="verdict-pill pill-works">✓ Works Well</span>
+                    <span class="verdict-pill pill-partial">~ Variable on urban roads</span>
+                </div>
+                <div class="score-block">
+                    <div class="score-row">
+                        <span class="score-label">Reliability</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:88%"></div></div>
+                        <span class="score-num">8.8</span>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Accuracy</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:85%"></div></div>
+                        <span class="score-num">8.5</span>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Driver Confidence</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:90%"></div></div>
+                        <span class="score-num">9.0</span>
+                    </div>
+                </div>
+            </li>
+
+            <!-- 2. Lane Keep Assist -->
+            <li class="feature-item">
+                <div class="feature-header">
+                    <div class="feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 17l9-14 9 14"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Lane Keep Assist (LKA) & Lane Centring</h3>
+                </div>
+                <p>LKA applies corrective steering inputs when the vehicle drifts across lane markings without signalling. Lane Centring — its more sophisticated sibling — continuously steers the car to the middle of the lane. Quality varies enormously: Volvo's Pilot Assist and Ford's BlueCruise set the benchmark with smooth, natural-feeling inputs, while some budget implementations produce jarring corrections that frustrate rather than assist.</p>
+                <div class="verdict-row">
+                    <span class="verdict-pill pill-works">✓ Works Well — premium systems</span>
+                    <span class="verdict-pill pill-caution">✕ Intrusive on budget trims</span>
+                </div>
+                <div class="score-block">
+                    <div class="score-row">
+                        <span class="score-label">Reliability</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:75%"></div></div>
+                        <span class="score-num">7.5</span>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Accuracy</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:72%"></div></div>
+                        <span class="score-num">7.2</span>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Driver Confidence</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:68%"></div></div>
+                        <span class="score-num">6.8</span>
+                    </div>
+                </div>
+            </li>
+
+            <!-- 3. Automatic Emergency Braking -->
+            <li class="feature-item">
+                <div class="feature-header">
+                    <div class="feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    <h3>Automatic Emergency Braking (AEB)</h3>
+                </div>
+                <p>AEB detects imminent collision risk and applies full braking autonomously when the driver fails to react. It is the single most proven life-saving ADAS feature — Euro NCAP data links widespread adoption to a measurable reduction in rear-end collisions. All new cars sold in Europe must include pedestrian AEB as standard from 2024. Performance differences between brands are now narrow; the key variable is detection range and night-time pedestrian accuracy.</p>
+                <div class="verdict-row">
+                    <span class="verdict-pill pill-works">✓ Works Well — across the board</span>
+                </div>
+                <div class="score-block">
+                    <div class="score-row">
+                        <span class="score-label">Reliability</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:93%"></div></div>
+                        <span class="score-num">9.3</span>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Accuracy</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:91%"></div></div>
+                        <span class="score-num">9.1</span>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Driver Confidence</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:95%"></div></div>
+                        <span class="score-num">9.5</span>
+                    </div>
+                </div>
+            </li>
+
+            <!-- 4. Driver Monitoring -->
+            <li class="feature-item">
+                <div class="feature-header">
+                    <div class="feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <h3>Driver Monitoring System (DMS)</h3>
+                </div>
+                <p>DMS uses an infrared camera to track eye gaze, head position, and blink rate — issuing alerts when drowsiness or distraction is detected. Camera-based systems from Subaru (DriverFocus) and General Motors lead the field with sub-second reaction times and low false-positive rates. Steering-torque-only systems — which infer attention from hand pressure — are significantly less accurate and should be considered a lesser alternative.</p>
+                <div class="verdict-row">
+                    <span class="verdict-pill pill-works">✓ Camera-based systems</span>
+                    <span class="verdict-pill pill-caution">✕ Torque-only detection</span>
+                </div>
+                <div class="score-block">
+                    <div class="score-row">
+                        <span class="score-label">Reliability</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:80%"></div></div>
+                        <span class="score-num">8.0</span>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Accuracy</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:78%"></div></div>
+                        <span class="score-num">7.8</span>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Driver Confidence</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:82%"></div></div>
+                        <span class="score-num">8.2</span>
+                    </div>
+                </div>
+            </li>
+
+            <!-- 5. Blind Spot Detection -->
+            <li class="feature-item">
+                <div class="feature-header">
+                    <div class="feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                    </div>
+                    <h3>Blind Spot Monitoring (BSM)</h3>
+                </div>
+                <p>Radar sensors mounted in the rear bumper detect vehicles in the blind-spot zone and alert the driver via mirror indicators or audible warnings. When combined with rear cross-traffic alert — which warns of approaching cars when reversing — BSM is one of the most universally well-implemented features across brands. False positives are rare, and driver acceptance rates are among the highest of any ADAS technology.</p>
+                <div class="verdict-row">
+                    <span class="verdict-pill pill-works">✓ Works Well — highly consistent</span>
+                </div>
+                <div class="score-block">
+                    <div class="score-row">
+                        <span class="score-label">Reliability</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:92%"></div></div>
+                        <span class="score-num">9.2</span>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Accuracy</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:90%"></div></div>
+                        <span class="score-num">9.0</span>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Driver Confidence</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:93%"></div></div>
+                        <span class="score-num">9.3</span>
+                    </div>
+                </div>
+            </li>
+
+            <!-- 6. Traffic Sign Recognition -->
+            <li class="feature-item">
+                <div class="feature-header">
+                    <div class="feature-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+                    </div>
+                    <h3>Traffic Sign Recognition (TSR)</h3>
+                </div>
+                <p>TSR reads speed limit signs and temporary restrictions via forward-facing camera, displaying the current limit on the dashboard or HUD. Accuracy has improved substantially but remains the least reliable feature reviewed here — particularly around temporary roadworks, partially obscured signs, or dual-use zones. Systems linked to live map data (Honda, BMW) outperform camera-only implementations significantly on consistency.</p>
+                <div class="verdict-row">
+                    <span class="verdict-pill pill-partial">~ Map-assisted systems only</span>
+                    <span class="verdict-pill pill-caution">✕ Camera-only inconsistent</span>
+                </div>
+                <div class="score-block">
+                    <div class="score-row">
+                        <span class="score-label">Reliability</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:62%"></div></div>
+                        <span class="score-num">6.2</span>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Accuracy</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:60%"></div></div>
+                        <span class="score-num">6.0</span>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">Driver Confidence</span>
+                        <div class="score-bar-wrap"><div class="score-bar-fill" style="width:58%"></div></div>
+                        <span class="score-num">5.8</span>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <!-- PULLQUOTE -->
+    <div class="pullquote">
+        <p>The best safety technology is invisible — you only notice it working when something might have gone wrong. The worst safety technology makes you feel like the car is fighting you for control.</p>
+        <cite>— Daniel Kroft, Automotive Safety Technology Editor</cite>
+    </div>
+
+    <!-- BRAND COMPARISON -->
+    <section>
+        <h2>Brand-by-Brand ADAS Comparison</h2>
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>Brand</th>
+                    <th>ACC Quality</th>
+                    <th>Lane Centring</th>
+                    <th>DMS Type</th>
+                    <th>Overall</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Volvo</strong></td>
+                    <td><span class="badge-yes">Excellent</span></td>
+                    <td><span class="badge-yes">Excellent</span></td>
+                    <td>Camera</td>
+                    <td><strong>9.2</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Mercedes</strong></td>
+                    <td><span class="badge-yes">Excellent</span></td>
+                    <td><span class="badge-yes">Excellent</span></td>
+                    <td>Camera</td>
+                    <td><strong>9.0</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Toyota / Lexus</strong></td>
+                    <td><span class="badge-yes">Excellent</span></td>
+                    <td><span class="badge-partial">Good</span></td>
+                    <td>Camera</td>
+                    <td><strong>8.8</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>BMW</strong></td>
+                    <td><span class="badge-yes">Excellent</span></td>
+                    <td><span class="badge-partial">Good</span></td>
+                    <td>Camera</td>
+                    <td><strong>8.6</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Ford</strong></td>
+                    <td><span class="badge-partial">Good</span></td>
+                    <td><span class="badge-yes">Excellent</span></td>
+                    <td>Torque</td>
+                    <td><strong>8.0</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Volkswagen</strong></td>
+                    <td><span class="badge-partial">Good</span></td>
+                    <td><span class="badge-partial">Good</span></td>
+                    <td>Torque</td>
+                    <td><strong>7.6</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- BUYER TIPS -->
+    <section>
+        <h2>What Buyers Should Know</h2>
+        <ul class="tips-list">
+            <li class="tip-item">
+                <div class="tip-number">1</div>
+                <p class="tip-text"><strong>Test ADAS features before buying, not after.</strong> A test drive on a motorway or dual carriageway will reveal whether lane centring feels natural or jarring — something no spec sheet can convey.</p>
+            </li>
+            <li class="tip-item">
+                <div class="tip-number">2</div>
+                <p class="tip-text"><strong>Prioritise AEB and blind spot monitoring first.</strong> These two features have the strongest independent safety evidence. If budget forces a trade-off, these should be non-negotiable before considering convenience features.</p>
+            </li>
+            <li class="tip-item">
+                <div class="tip-number">3</div>
+                <p class="tip-text"><strong>Demand a camera-based driver monitoring system.</strong> Torque-only detection can be defeated simply by resting a hand lightly on the wheel. Camera systems that track eye gaze are categorically more effective at catching genuine distraction.</p>
+            </li>
+            <li class="tip-item">
+                <div class="tip-number">4</div>
+                <p class="tip-text"><strong>Check sensitivity adjustment options.</strong> Systems you can't tune to your preferences will likely get switched off entirely — negating their safety benefit. Look for brands that offer at least three sensitivity levels per feature.</p>
+            </li>
+            <li class="tip-item">
+                <div class="tip-number">5</div>
+                <p class="tip-text"><strong>Over-the-air update capability matters more than you think.</strong> ADAS software improves significantly post-launch. Brands like Tesla, BMW, and Volvo regularly push performance enhancements wirelessly — an underrated long-term ownership benefit.</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- VERDICT -->
+    <section>
+        <h2>Our Verdict</h2>
+        <p>AEB and blind spot monitoring are the two features every buyer should insist on — both are mature, proven, and consistently well-implemented across brands. Adaptive cruise control has reached a similar level of reliability on motorways, though urban performance still varies. Lane centring and driver monitoring are highly dependent on implementation quality — with a clear tier gap between premium and mainstream brands. Traffic sign recognition remains the least reliable feature and should be treated as a convenience aid rather than a safety net.</p>
+    </section>
+
+    <!-- TAGS -->
+    <div class="tags">
+        <span class="tag">ADAS</span>
+        <span class="tag">Safety Tech</span>
+        <span class="tag">Lane Assist</span>
+        <span class="tag">Adaptive Cruise</span>
+        <span class="tag">Driver Monitoring</span>
+        <span class="tag">AEB</span>
+        <span class="tag">Buyer's Guide</span>
+        <span class="tag">2025</span>
+    </div>
+
+</div>
+
+</body>
+</html>

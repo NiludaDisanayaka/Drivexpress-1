@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Battery & AC Service</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f0f4ff 0%, #eaf0f7 60%, #f8fbff 100%);
+    margin: 0;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Decorative Background */
+  .container::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at center, #c9d9ff 0%, #f0f4ff 60%, transparent 70%);
+    top: -120px;
+    right: -120px;
+    opacity: 0.8;
+    transform: rotate(20deg);
+  }
+
+  h1 {
+    color: #0a2a52;
+    margin-bottom: 5px;
+  }
+
+  p {
+    color: #4a5a75;
+    font-size: 16px;
+  }
+
+  h3 {
+    color: #1f3b6a;
+    margin-top: 30px;
+  }
+
+  /* Issue Cards */
+  .issues {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .issue-card {
+    flex: 1;
+    background: #f5f8ff;
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid #e0e7ff;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .issue-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  .issue-card i {
+    font-size: 22px;
+    color: #003366;
+    margin-bottom: 8px;
+  }
+
+  /* Form */
+  form {
+    margin-top: 25px;
+  }
+
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #1f3b6a;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .checkbox-group label {
+    font-weight: 500;
+    color: #4a5a75;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 14px;
+    width: 100%;
+    background: #003366;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.3s ease;
+  }
+
+  button:hover {
+    background: #001f3a;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .issues {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Battery & AC Service</h1>
+<p>Check battery health and keep your car air conditioning running smoothly.</p>
+
+<h3>Common Battery & AC Issues</h3>
+
+<div class="issues">
+
+<div class="issue-card">
+<i class="fa-solid fa-car-battery"></i>
+<p><b>Weak Battery</b></p>
+</div>
+
+<div class="issue-card">
+<i class="fa-solid fa-snowflake"></i>
+<p><b>AC Not Cooling</b></p>
+</div>
+
+<div class="issue-card">
+<i class="fa-solid fa-wind"></i>
+<p><b>Weak Air Flow</b></p>
+</div>
+
+</div>
+
+<h3>Request Battery & AC Check</h3>
+
+<form>
+
+<div class="checkbox-group">
+<label><input type="checkbox"> Battery drains quickly</label>
+<label><input type="checkbox"> AC not cooling properly</label>
+<label><input type="checkbox"> Weak air flow from vents</label>
+<label><input type="checkbox"> Strange noise from AC</label>
+<label><input type="checkbox"> Battery warning light</label>
+</div>
+
+<button onclick="alert('Successfully Added')">Book Battery & AC Service</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

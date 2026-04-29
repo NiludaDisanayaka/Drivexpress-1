@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 vs 2024 Sedan Matchup: What's Right for You?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --nav-dark: #112a3d;
+            --accent: #f59e0b;
+            --purple: #7c3aed;
+            --muted: #6b7280;
+        }
+
+        body {
+            font-family: 'DM Sans', Arial, sans-serif;
+            background: linear-gradient(to right, #eef2f7, #f9fbfd);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .terms-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        /* ── META ── */
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .meta-badge {
+            background: var(--purple);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 4px 14px;
+            border-radius: 20px;
+        }
+
+        .meta-dot {
+            width: 4px;
+            height: 4px;
+            background: #cbd5e1;
+            border-radius: 50%;
+        }
+
+        .meta-date { font-size: 13px; color: var(--muted); }
+
+        /* ── TITLE ── */
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 34px;
+            font-weight: 800;
+            color: #1f2933;
+            line-height: 1.25;
+            margin-bottom: 14px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .title-divider {
+            border: none;
+            border-top: 2px solid #eef2f7;
+            margin-bottom: 32px;
+        }
+
+        /* ── AUTHOR ── */
+        .author-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 36px;
+        }
+
+        .author-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #112a3d, #1a3a52);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .author-info .name { font-size: 14px; font-weight: 600; color: #112a3d; }
+        .author-info .role { font-size: 12px; color: var(--muted); }
+
+        .read-time {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            margin-bottom: 28px;
+            padding-left: 15px;
+            border-left: 4px solid #1a3a52;
+        }
+
+        section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a3a52;
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        section p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        /* ── YEAR VERDICT BANNER ── */
+        .year-banners {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 32px;
+        }
+
+        .year-banner {
+            border-radius: 12px;
+            padding: 22px 22px 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .year-banner.y2025 {
+            background: linear-gradient(135deg, #112a3d 0%, #1a3a52 100%);
+            color: #fff;
+        }
+
+        .year-banner.y2024 {
+            background: #f8fafc;
+            border: 2px solid #e5e7eb;
+            color: #112a3d;
+        }
+
+        .year-banner .year-label {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 800;
+            opacity: 0.12;
+            position: absolute;
+            top: 8px;
+            right: 14px;
+            line-height: 1;
+        }
+
+        .year-banner h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .year-banner.y2025 h3 { color: #fff; }
+        .year-banner.y2024 h3 { color: #112a3d; }
+
+        .year-banner p {
+            font-size: 13px;
+            line-height: 1.65;
+            position: relative;
+            z-index: 1;
+        }
+
+        .year-banner.y2025 p { color: rgba(255,255,255,0.82); }
+        .year-banner.y2024 p { color: #6b7280; }
+
+        .verdict-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .tag-new   { background: var(--accent); color: #fff; }
+        .tag-value { background: #d1fae5; color: #065f46; }
+
+        /* ── MATCHUP CARDS ── */
+        .matchup-list {
+            list-style: none;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .matchup-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(17,42,61,0.07);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .matchup-item:hover {
+            box-shadow: 0 6px 20px rgba(17,42,61,0.12);
+        }
+
+        .matchup-title-bar {
+            background: var(--nav-dark);
+            color: #fff;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .matchup-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .matchup-icon svg {
+            stroke: #fff;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .matchup-title-bar h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .matchup-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .matchup-col {
+            padding: 18px 20px;
+        }
+
+        .matchup-col.col-2025 {
+            background: #f0f4ff;
+            border-right: 1px solid #e5e7eb;
+        }
+
+        .matchup-col.col-2024 {
+            background: #f8fafc;
+        }
+
+        .col-year-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .col-2025 .col-year-label { color: var(--purple); }
+        .col-2024 .col-year-label { color: var(--muted); }
+
+        .year-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .col-2025 .year-dot { background: var(--purple); }
+        .col-2024 .year-dot { background: #cbd5e1; }
+
+        .matchup-col p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #374151;
+        }
+
+        .matchup-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .matchup-col ul li {
+            font-size: 14px;
+            color: #374151;
+            display: flex;
+            align-items: flex-start;
+            gap: 7px;
+            line-height: 1.5;
+        }
+
+        .matchup-col ul li::before {
+            content: '→';
+            color: var(--purple);
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 12px;
+            margin-top: 1px;
+        }
+
+        .col-2024 ul li::before { color: #9ca3af; }
+
+        .winner-strip {
+            padding: 10px 20px;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .winner-strip.win-2025 { background: #ede9fe; color: #5b21b6; }
+        .winner-strip.win-2024 { background: #d1fae5; color: #065f46; }
+        .winner-strip.win-tie  { background: #fef3c7; color: #92400e; }
+
+        /* ── PRICE COMPARISON ── */
+        .price-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .price-card {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 20px;
+            border-top: 3px solid var(--nav-dark);
+        }
+
+        .price-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #112a3d;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 7px 0;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 13px;
+        }
+
+        .price-row:last-child { border-bottom: none; }
+
+        .price-row .p-label { color: var(--muted); }
+
+        .price-row .p-val {
+            font-weight: 700;
+            color: #112a3d;
+        }
+
+        .price-row .p-val.cheaper { color: #059669; }
+        .price-row .p-val.pricier { color: #7c3aed; }
+
+        /* ── BUYER PROFILE CARDS ── */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .profile-card {
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .profile-card.buy-2025 {
+            background: linear-gradient(135deg, #ede9fe, #f5f3ff);
+            border: 1.5px solid #c4b5fd;
+        }
+
+        .profile-card.buy-2024 {
+            background: linear-gradient(135deg, #f0fdf4, #f8fafc);
+            border: 1.5px solid #bbf7d0;
+        }
+
+        .profile-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .buy-2025 h4 { color: #5b21b6; }
+        .buy-2024 h4 { color: #065f46; }
+
+        .profile-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .profile-card ul li {
+            font-size: 14px;
+            color: #374151;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.5;
+        }
+
+        .check-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .buy-2025 .check-dot { background: #7c3aed; }
+        .buy-2024 .check-dot { background: #059669; }
+
+        .check-dot svg {
+            stroke: #fff;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* ── PULLQUOTE ── */
+        .pullquote {
+            background: linear-gradient(135deg, #112a3d, #1a3a52);
+            padding: 28px 32px;
+            border-radius: 10px;
+            margin: 32px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pullquote::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 100px;
+            line-height: 1;
+            color: rgba(124,58,237,0.2);
+            position: absolute;
+            top: -8px;
+            left: 14px;
+        }
+
+        .pullquote p {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-style: italic;
+            line-height: 1.7;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
+
+        .pullquote cite {
+            display: block;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            color: #c4b5fd;
+            margin-top: 12px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── FULL COMPARISON TABLE ── */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        .spec-table th {
+            background: #112a3d;
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .spec-table th:first-child { border-radius: 6px 0 0 0; }
+        .spec-table th:last-child  { border-radius: 0 6px 0 0; }
+
+        .spec-table th.th-2025 { background: #4c1d95; }
+        .spec-table th.th-2024 { background: #1f4e3d; }
+
+        .spec-table td {
+            padding: 10px 14px;
+            color: #374151;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .spec-table tr:last-child td { border-bottom: none; }
+        .spec-table tr:nth-child(even) td { background: #f8fafc; }
+
+        .badge-new  { background: #ede9fe; color: #5b21b6; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; }
+        .badge-same { background: #f3f4f6; color: #6b7280; font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 20px; }
+        .badge-win  { background: #d1fae5; color: #065f46; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; }
+
+        /* ── TAGS ── */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid #eef2f7;
+        }
+
+        .tag {
+            font-size: 12px;
+            font-weight: 500;
+            background: #eef2f7;
+            color: #112a3d;
+            padding: 5px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag:hover { background: #112a3d; color: #fff; }
+
+        @media (max-width: 640px) {
+            .terms-container { margin: 20px; padding: 24px; }
+            h1 { font-size: 24px; }
+            .year-banners, .matchup-body, .price-grid, .profile-grid { grid-template-columns: 1fr; }
+            .matchup-col.col-2025 { border-right: none; border-bottom: 1px solid #e5e7eb; }
+            section h2 { font-size: 16px; }
+            .spec-table { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="terms-container">
+
+    <!-- META -->
+    <div class="article-meta">
+        <span class="meta-badge">Comparison</span>
+        <span class="meta-dot"></span>
+        <span class="meta-date">May 2025</span>
+    </div>
+
+    <!-- TITLE -->
+    <h1>2025 vs 2024 Sedan Matchup: What's Right for You?</h1>
+    <p class="subtitle">We compare trims, tech and total cost of ownership to help you choose the right model year.</p>
+
+    <hr class="title-divider">
+
+    <!-- AUTHOR -->
+    <div class="author-row">
+        <div class="author-avatar">RP</div>
+        <div class="author-info">
+            <div class="name">Rachel Park</div>
+            <div class="role">Senior Comparison & Buying Guide Editor</div>
+        </div>
+        <div class="read-time">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            13 min read
+        </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section>
+        <h2>Overview</h2>
+        <p>Choosing between a current-year and a one-year-old sedan is one of the most common — and most financially consequential — decisions a car buyer faces. The 2025 models bring meaningful updates in safety tech, infotainment, and powertrain efficiency. But 2024 models now carry 8–14% depreciation discounts, making them exceptional value for buyers who don't need the latest features. This guide walks through every dimension that matters so you can make the right call for your situation.</p>
+    </section>
+
+    <!-- AT A GLANCE BANNERS -->
+    <div class="year-banners">
+        <div class="year-banner y2025">
+            <span class="year-label">2025</span>
+            <span class="verdict-tag tag-new">New Model Year</span>
+            <h3>2025 Sedans</h3>
+            <p>Updated safety suites, new infotainment hardware, mild powertrain efficiency gains, and fresh exterior styling on key models. Pay a premium for the latest — but it's more justified than past years.</p>
+        </div>
+        <div class="year-banner y2024">
+            <span class="year-label">2024</span>
+            <span class="verdict-tag tag-value">Best Value</span>
+            <h3>2024 Sedans</h3>
+            <p>Proven reliability data, significant depreciation discounts of 8–14%, and nearly identical tech on most mainstream trims. The smart buy for most buyers who prioritise total cost over novelty.</p>
+        </div>
+    </div>
+
+    <!-- CATEGORY MATCHUPS -->
+    <section>
+        <h2>Head-to-Head: Six Categories That Matter</h2>
+
+        <ul class="matchup-list">
+
+            <!-- Safety Tech -->
+            <li class="matchup-item">
+                <div class="matchup-title-bar">
+                    <div class="matchup-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Safety Technology</h3>
+                </div>
+                <div class="matchup-body">
+                    <div class="matchup-col col-2025">
+                        <div class="col-year-label"><span class="year-dot"></span>2025 Model</div>
+                        <ul>
+                            <li>Standard camera-based driver monitoring across all trims</li>
+                            <li>Upgraded AEB with intersection and turning detection</li>
+                            <li>Rear cross-traffic braking now standard on base trim</li>
+                            <li>Emergency Steering Assist added to mid and upper trims</li>
+                        </ul>
+                    </div>
+                    <div class="matchup-col col-2024">
+                        <div class="col-year-label"><span class="year-dot"></span>2024 Model</div>
+                        <ul>
+                            <li>AEB standard — pedestrian and cyclist detection included</li>
+                            <li>Lane keep assist and adaptive cruise on mid trims and above</li>
+                            <li>Driver monitoring torque-only on most non-premium trims</li>
+                            <li>Rear cross-traffic alert (no autonomous braking)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="winner-strip win-2025">🏆 2025 wins — meaningful safety suite upgrade across the board</div>
+            </li>
+
+            <!-- Infotainment -->
+            <li class="matchup-item">
+                <div class="matchup-title-bar">
+                    <div class="matchup-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>Infotainment & Connectivity</h3>
+                </div>
+                <div class="matchup-body">
+                    <div class="matchup-col col-2025">
+                        <div class="col-year-label"><span class="year-dot"></span>2025 Model</div>
+                        <ul>
+                            <li>12.3–15" touchscreen standard depending on trim</li>
+                            <li>Wireless Apple CarPlay and Android Auto standard</li>
+                            <li>Over-the-air software update capability</li>
+                            <li>Faster GPU — sub-100ms screen response times</li>
+                            <li>Native Google Maps integration on upper trims</li>
+                        </ul>
+                    </div>
+                    <div class="matchup-col col-2024">
+                        <div class="col-year-label"><span class="year-dot"></span>2024 Model</div>
+                        <ul>
+                            <li>10.25–12.3" screen standard; larger on premium trims</li>
+                            <li>Wireless CarPlay on mid trim and above; wired on base</li>
+                            <li>OTA updates available on top trim only</li>
+                            <li>Slightly slower system response — noticeable on lower trims</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="winner-strip win-2025">🏆 2025 wins — screen size, speed, and OTA parity improved significantly</div>
+            </li>
+
+            <!-- Powertrain -->
+            <li class="matchup-item">
+                <div class="matchup-title-bar">
+                    <div class="matchup-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                    </div>
+                    <h3>Powertrain & Efficiency</h3>
+                </div>
+                <div class="matchup-body">
+                    <div class="matchup-col col-2025">
+                        <div class="col-year-label"><span class="year-dot"></span>2025 Model</div>
+                        <ul>
+                            <li>2–4 mpg improvement on base hybrid variant</li>
+                            <li>Revised transmission mapping — smoother low-speed response</li>
+                            <li>48V mild-hybrid option added to petrol base trim</li>
+                            <li>Slightly quicker 0–60 on turbocharged variants (+0.2s)</li>
+                        </ul>
+                    </div>
+                    <div class="matchup-col col-2024">
+                        <div class="col-year-label"><span class="year-dot"></span>2024 Model</div>
+                        <ul>
+                            <li>Proven reliability record — full-year owner data available</li>
+                            <li>Virtually identical real-world performance on most trims</li>
+                            <li>No mild-hybrid option on petrol base trim</li>
+                            <li>Slightly higher fuel consumption on highway — 2–4 mpg</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="winner-strip win-2025">🏆 2025 edges ahead — hybrid improvements justify upgrade for high-mileage drivers</div>
+            </li>
+
+            <!-- Trim & Features -->
+            <li class="matchup-item">
+                <div class="matchup-title-bar">
+                    <div class="matchup-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                    </div>
+                    <h3>Trim Levels & Standard Features</h3>
+                </div>
+                <div class="matchup-body">
+                    <div class="matchup-col col-2025">
+                        <div class="col-year-label"><span class="year-dot"></span>2025 Model</div>
+                        <ul>
+                            <li>Heated front seats now standard on base trim</li>
+                            <li>Power-adjustable driver seat drops one trim level</li>
+                            <li>Ambient interior lighting standard mid trim and above</li>
+                            <li>Panoramic sunroof added as option on mid trim</li>
+                        </ul>
+                    </div>
+                    <div class="matchup-col col-2024">
+                        <div class="col-year-label"><span class="year-dot"></span>2024 Model</div>
+                        <ul>
+                            <li>Heated seats require mid trim or higher</li>
+                            <li>Similar feature set overall — differences are incremental</li>
+                            <li>Available at top-trim spec now heavily discounted</li>
+                            <li>Fewer ambient lighting options; no panoramic on mid</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="winner-strip win-2025">🏆 2025 wins on paper — but 2024 top trim often matches 2025 mid trim at lower cost</div>
+            </li>
+
+            <!-- Price & Depreciation -->
+            <li class="matchup-item">
+                <div class="matchup-title-bar">
+                    <div class="matchup-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Price & Depreciation</h3>
+                </div>
+                <div class="matchup-body">
+                    <div class="matchup-col col-2025">
+                        <div class="col-year-label"><span class="year-dot"></span>2025 Model</div>
+                        <ul>
+                            <li>MSRP 4–7% higher than equivalent 2024 trim</li>
+                            <li>Will face its steepest depreciation in year one</li>
+                            <li>Eligible for current incentives and financing offers</li>
+                            <li>Higher resale floor in 3–5 years vs equivalent 2024</li>
+                        </ul>
+                    </div>
+                    <div class="matchup-col col-2024">
+                        <div class="col-year-label"><span class="year-dot"></span>2024 Model</div>
+                        <ul>
+                            <li>8–14% discount vs original MSRP now widely available</li>
+                            <li>Year-one depreciation already absorbed by first owner</li>
+                            <li>Dealer incentives aggressive — strong negotiating position</li>
+                            <li>Lower absolute resale, but better cost-per-year ownership</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="winner-strip win-2024">🏆 2024 wins clearly — year-one depreciation savings outweigh the feature gap for most buyers</div>
+            </li>
+
+            <!-- Reliability & Ownership -->
+            <li class="matchup-item">
+                <div class="matchup-title-bar">
+                    <div class="matchup-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3>Reliability & Ownership Data</h3>
+                </div>
+                <div class="matchup-body">
+                    <div class="matchup-col col-2025">
+                        <div class="col-year-label"><span class="year-dot"></span>2025 Model</div>
+                        <ul>
+                            <li>No full-year owner reliability data yet available</li>
+                            <li>New infotainment hardware carries early-adopter risk</li>
+                            <li>Warranty coverage begins fresh — full factory protection</li>
+                            <li>48V system is unproven at scale in this application</li>
+                        </ul>
+                    </div>
+                    <div class="matchup-col col-2024">
+                        <div class="col-year-label"><span class="year-dot"></span>2024 Model</div>
+                        <ul>
+                            <li>12+ months of owner data and independent reliability surveys</li>
+                            <li>Known issues already addressed via TSB and software patch</li>
+                            <li>Remaining factory warranty transferable on CPO examples</li>
+                            <li>Proven powertrain — no new technology risk</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="winner-strip win-2024">🏆 2024 wins — proven reliability record and full owner data are a genuine advantage</div>
+            </li>
+
+        </ul>
+    </section>
+
+    <!-- PULLQUOTE -->
+    <div class="pullquote">
+        <p>For most buyers, the 2024 model is the rational choice. For drivers who prioritise having the safest and most connected car on the road, the 2025 justifies its premium — but only just.</p>
+        <cite>— Rachel Park, Senior Comparison & Buying Guide Editor</cite>
+    </div>
+
+    <!-- PRICE COMPARISON -->
+    <section>
+        <h2>Price Comparison by Trim</h2>
+        <div class="price-grid">
+            <div class="price-card">
+                <h4>Base Trim</h4>
+                <div class="price-row">
+                    <span class="p-label">2025 MSRP</span>
+                    <span class="p-val pricier">$26,400</span>
+                </div>
+                <div class="price-row">
+                    <span class="p-label">2024 Market Price</span>
+                    <span class="p-val cheaper">$23,200</span>
+                </div>
+                <div class="price-row">
+                    <span class="p-label">Saving with 2024</span>
+                    <span class="p-val cheaper">$3,200 (12%)</span>
+                </div>
+                <div class="price-row">
+                    <span class="p-label">Key 2025 upgrade</span>
+                    <span class="p-val">Heated seats + 48V</span>
+                </div>
+            </div>
+            <div class="price-card">
+                <h4>Mid Trim</h4>
+                <div class="price-row">
+                    <span class="p-label">2025 MSRP</span>
+                    <span class="p-val pricier">$32,100</span>
+                </div>
+                <div class="price-row">
+                    <span class="p-label">2024 Market Price</span>
+                    <span class="p-val cheaper">$28,400</span>
+                </div>
+                <div class="price-row">
+                    <span class="p-label">Saving with 2024</span>
+                    <span class="p-val cheaper">$3,700 (11.5%)</span>
+                </div>
+                <div class="price-row">
+                    <span class="p-label">Key 2025 upgrade</span>
+                    <span class="p-val">Larger screen + OTA</span>
+                </div>
+            </div>
+            <div class="price-card">
+                <h4>Sport / Performance Trim</h4>
+                <div class="price-row">
+                    <span class="p-label">2025 MSRP</span>
+                    <span class="p-val pricier">$38,500</span>
+                </div>
+                <div class="price-row">
+                    <span class="p-label">2024 Market Price</span>
+                    <span class="p-val cheaper">$34,200</span>
+                </div>
+                <div class="price-row">
+                    <span class="p-label">Saving with 2024</span>
+                    <span class="p-val cheaper">$4,300 (11%)</span>
+                </div>
+                <div class="price-row">
+                    <span class="p-label">Key 2025 upgrade</span>
+                    <span class="p-val">ESA + camera DMS</span>
+                </div>
+            </div>
+            <div class="price-card">
+                <h4>Top / Premium Trim</h4>
+                <div class="price-row">
+                    <span class="p-label">2025 MSRP</span>
+                    <span class="p-val pricier">$44,900</span>
+                </div>
+                <div class="price-row">
+                    <span class="p-label">2024 Market Price</span>
+                    <span class="p-val cheaper">$39,100</span>
+                </div>
+                <div class="price-row">
+                    <span class="p-label">Saving with 2024</span>
+                    <span class="p-val cheaper">$5,800 (13%)</span>
+                </div>
+                <div class="price-row">
+                    <span class="p-label">Key 2025 upgrade</span>
+                    <span class="p-val">Google Maps + HUD</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO SHOULD BUY WHICH -->
+    <section>
+        <h2>Which Year Is Right for You?</h2>
+        <div class="profile-grid">
+            <div class="profile-card buy-2025">
+                <h4>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b21b6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Buy the 2025 if…
+                </h4>
+                <ul>
+                    <li><div class="check-dot"><svg width="8" height="8" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Safety technology is your top priority — the ADAS improvements are substantive</li>
+                    <li><div class="check-dot"><svg width="8" height="8" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>You drive 20,000+ miles per year and will benefit from fuel efficiency gains</li>
+                    <li><div class="check-dot"><svg width="8" height="8" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>You plan to keep the car 6–8 years and want the latest software architecture</li>
+                    <li><div class="check-dot"><svg width="8" height="8" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>OTA updates and wireless connectivity are important to your daily workflow</li>
+                    <li><div class="check-dot"><svg width="8" height="8" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>You're buying base trim — the feature jump to 2025 base is most pronounced here</li>
+                </ul>
+            </div>
+            <div class="profile-card buy-2024">
+                <h4>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Buy the 2024 if…
+                </h4>
+                <ul>
+                    <li><div class="check-dot"><svg width="8" height="8" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Total cost of ownership over 3–5 years is your primary concern</li>
+                    <li><div class="check-dot"><svg width="8" height="8" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>You drive under 15,000 miles per year — fuel savings won't close the price gap</li>
+                    <li><div class="check-dot"><svg width="8" height="8" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>You want proven reliability data before committing to a new platform</li>
+                    <li><div class="check-dot"><svg width="8" height="8" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>You can access a Certified Pre-Owned 2024 with remaining factory warranty</li>
+                    <li><div class="check-dot"><svg width="8" height="8" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Budget allows a higher 2024 trim for the same price as 2025 base or mid</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL SPEC TABLE -->
+    <section>
+        <h2>Full Feature Comparison</h2>
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th class="th-2025">2025</th>
+                    <th class="th-2024">2024</th>
+                    <th>Edge</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>AEB (incl. intersection)</strong></td>
+                    <td>Standard all trims</td>
+                    <td>Standard all trims</td>
+                    <td><span class="badge-same">Tie</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Camera-based DMS</strong></td>
+                    <td>Standard all trims</td>
+                    <td>Top trim only</td>
+                    <td><span class="badge-new">2025</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Wireless CarPlay</strong></td>
+                    <td>Standard all trims</td>
+                    <td>Mid trim+</td>
+                    <td><span class="badge-new">2025</span></td>
+                </tr>
+                <tr>
+                    <td><strong>OTA Updates</strong></td>
+                    <td>Standard all trims</td>
+                    <td>Top trim only</td>
+                    <td><span class="badge-new">2025</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Heated Front Seats</strong></td>
+                    <td>Standard base+</td>
+                    <td>Mid trim+</td>
+                    <td><span class="badge-new">2025</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Fuel Economy (hybrid)</strong></td>
+                    <td>44–48 mpg</td>
+                    <td>40–44 mpg</td>
+                    <td><span class="badge-new">2025</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Proven Reliability Data</strong></td>
+                    <td>Not yet</td>
+                    <td>Full year available</td>
+                    <td><span class="badge-win">2024</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Depreciation Absorbed</strong></td>
+                    <td>No — buying new</td>
+                    <td>8–14% absorbed</td>
+                    <td><span class="badge-win">2024</span></td>
+                </tr>
+                <tr>
+                    <td><strong>CPO Availability</strong></td>
+                    <td>Not yet</td>
+                    <td>Widely available</td>
+                    <td><span class="badge-win">2024</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Negotiating Leverage</strong></td>
+                    <td>Limited</td>
+                    <td>Strong</td>
+                    <td><span class="badge-win">2024</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- VERDICT -->
+    <section>
+        <h2>Our Verdict</h2>
+        <p>The 2025 sedan is the better car — that much is clear. Its safety system upgrades, across-the-board wireless connectivity, and efficiency improvements are genuine steps forward rather than cosmetic refreshes. But the 2024 is the better purchase for the majority of buyers. The $3,200–$5,800 price gap across trims is significant, the reliability track record is established, and CPO examples offer remaining warranty coverage at a meaningful discount. Unless safety technology or fuel efficiency gains are a priority for your usage, the 2024 delivers more value per dollar spent.</p>
+    </section>
+
+    <!-- TAGS -->
+    <div class="tags">
+        <span class="tag">Sedan Comparison</span>
+        <span class="tag">2025 vs 2024</span>
+        <span class="tag">Buying Guide</span>
+        <span class="tag">Depreciation</span>
+        <span class="tag">Trims</span>
+        <span class="tag">Total Cost</span>
+        <span class="tag">Safety Tech</span>
+        <span class="tag">CPO</span>
+    </div>
+
+</div>
+
+</body>
+</html>
